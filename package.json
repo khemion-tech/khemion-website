@@ -1,26 +1,26 @@
-# package.json (save as separate file)
 {
   "name": "khemion-website",
   "version": "1.0.0",
-  "description": "KhemI/On - Advanced Microfluidics & Biosensor Solutions",
+  "description": "KhemI/On - Microfluidics and Biosensor Research Services",
+  "main": "index.html",
   "scripts": {
-    "build": "echo 'No build required for static site'",
-    "serve": "npx http-server"
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khemion-tech/khemion-website.git"
   },
   "keywords": [
     "microfluidics",
     "biosensors",
     "lab-on-chip",
-    "organ-on-chip",
-    "microneedles"
+    "microneedles",
+    "research"
   ],
   "author": "KhemI/On",
-  "license": "UNLICENSED"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/khemion-tech/khemion-website/issues"
+  },
+  "homepage": "https://khemion.com"
 }
-
----
-
-# _redirects file (for domain redirects if needed)
-# Redirect default Netlify subdomain to primary domain
-https://khemion.netlify.app/* https://khemion.com/:splat 301!
-http://khemion.netlify.app/* https://khemion.com/:splat 301!
