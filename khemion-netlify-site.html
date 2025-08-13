@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhemI/On - Advanced Microfluidics & Biosensor Solutions</title>
+    <meta name="description" content="Design and manufacturing of custom Lab-on-Chip, Organ-on-Chip, and MicroNeedle devices for biosensor research and development.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #3182ce;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-white);
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: var(--bg-white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .cta-button {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: var(--secondary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+            padding: 0.75rem 2rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: 2px solid white;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 4rem 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+        
+        .section-intro {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Capabilities Grid */
+        .capabilities {
+            background: var(--bg-light);
+        }
+        
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .capability-card {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .capability-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .capability-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .capability-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .capability-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.1;
+        }
+        
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .product-card {
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .product-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .product-header h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-body {
+            padding: 1.5rem;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .product-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-light);
+        }
+        
+        .product-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .product-features li::before {
+            content: "✓ ";
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        /* Technology Section */
+        .technology {
+            background: var(--bg-light);
+        }
+        
+        .tech-highlight {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .tech-highlight h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Applications */
+        .applications-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .application-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+        
+        .application-item h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+        
+        .footer-section p, .footer-section ul {
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-section a:hover {
+            opacity: 1;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">KhemI/On</a>
+            <ul class="nav-links">
+                <li><a href="#capabilities">Capabilities</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#contact" class="cta-button">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Advanced Microfluidics & Biosensor Solutions</h1>
+            <p class="subtitle">Design and Manufacturing of Custom Lab-on-Chip, Organ-on-Chip, and MicroNeedle Devices for Cutting-Edge Research</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">Request Consultation</a>
+                <a href="#capabilities" class="btn-secondary">Explore Capabilities</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section class="capabilities" id="capabilities">
+        <div class="container">
+            <h2>Our Capabilities</h2>
+            <p class="section-intro">Patent-pending manufacturing technologies enabling integration of bio-compatible nanofiber, microneedle, and electrochemical sensor components into composite milli and microfluidic devices.</p>
+            
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-icon"></div>
+                    <h3>Custom Lab-on-Chip Design</h3>
+                    <p>Tailored microfluidic device design and prototyping for specific research applications. From concept to functional prototype with rapid iteration capabilities.</p>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="capability-icon"></div>
+                    <h3>Organ-on-Chip Devices</h3>
+                    <p>Precision-engineered organ-on-chip platforms (device only) designed for tissue culture and drug testing applications with customizable channel geometries.</p>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="capability-icon"></div>
+                    <h3>MicroNeedle Arrays</h3>
+                    <p>Advanced microneedle patches optimized for wearable biosensor integration, transdermal delivery, and minimally invasive sampling applications.</p>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="capability-icon"></div>
+                    <h3>Electrochemical Integration</h3>
+                    <p>Seamless integration of electrochemical sensors into microfluidic systems for real-time monitoring and detection capabilities.</p>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="capability-icon"></div>
+                    <h3>Biocompatible Materials</h3>
+                    <p>Expertise in biocompatible nanofiber integration and surface functionalization for enhanced biological interactions.</p>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="capability-icon"></div>
+                    <h3>Research Services</h3>
+                    <p>Comprehensive research-as-a-service offerings, from feasibility studies to full device development and validation support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2>Product Solutions</h2>
+            <p class="section-intro">Specialized devices and platforms designed to accelerate your research and development initiatives.</p>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>MicroNeedle Biosensor Patches</h3>
+                        <p>Next-generation wearable biosensor research platforms</p>
+                    </div>
+                    <div class="product-body">
+                        <p>Our microneedle patches are specifically engineered for biosensor research applications, offering unprecedented access to interstitial fluid biomarkers.</p>
+                        <ul class="product-features">
+                            <li>Customizable needle geometry and density</li>
+                            <li>Integrated electrochemical sensing capabilities</li>
+                            <li>Biocompatible polymer construction</li>
+                            <li>Scalable manufacturing process</li>
+                            <li>Support for multi-analyte detection</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>Custom Microfluidic Devices</h3>
+                        <p>Lab-on-chip and organ-on-chip platforms</p>
+                    </div>
+                    <div class="product-body">
+                        <p>Precision-engineered microfluidic devices tailored to your specific research requirements, from simple flow cells to complex multi-chamber systems.</p>
+                        <ul class="product-features">
+                            <li>Custom channel geometries and layouts</li>
+                            <li>Multiple material options available</li>
+                            <li>Integrated valving and pumping options</li>
+                            <li>Optical transparency for imaging</li>
+                            <li>Rapid prototyping capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology" id="technology">
+        <div class="container">
+            <h2>Technology Platform</h2>
+            <p class="section-intro">Leveraging patent-pending manufacturing technologies to deliver innovative solutions for the most demanding research challenges.</p>
+            
+            <div class="tech-highlight">
+                <h3>Proprietary Manufacturing Process</h3>
+                <p>Our unique manufacturing approach enables the seamless integration of multiple functional components that traditionally require separate fabrication processes. This includes the ability to combine biocompatible nanofibers, precision microneedles, and sensitive electrochemical sensors within a single device architecture.</p>
+                <p style="margin-top: 1rem;">The result is a new class of composite devices that offer enhanced functionality, improved reliability, and reduced complexity for researchers pushing the boundaries of biosensing and microfluidic applications.</p>
+            </div>
+            
+            <div class="tech-highlight" style="margin-top: 1.5rem;">
+                <h3>Customization & Flexibility</h3>
+                <p>Our team's expertise extends beyond our listed capabilities. We specialize in developing custom solutions for unique research challenges, working closely with clients to transform concepts into functional devices. Whether you need modifications to existing designs or entirely new device architectures, we're equipped to deliver solutions that meet your specific requirements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section class="applications" id="applications">
+        <div class="container">
+            <h2>Research Applications</h2>
+            <p class="section-intro">Supporting breakthrough research across multiple domains</p>
+            
+            <div class="applications-list">
+                <div class="application-item">
+                    <h4>Wearable Biosensors</h4>
+                    <p>Continuous monitoring platforms for real-time biomarker detection</p>
+                </div>
+                <div class="application-item">
+                    <h4>Drug Discovery</h4>
+                    <p>High-throughput screening and pharmacokinetic studies</p>
+                </div>
+                <div class="application-item">
+                    <h4>Point-of-Care Diagnostics</h4>
+                    <p>Rapid, sensitive detection systems for clinical applications</p>
+                </div>
+                <div class="application-item">
+                    <h4>Cell Culture & Analysis</h4>
+                    <p>Advanced platforms for cellular studies and tissue engineering</p>
+                </div>
+                <div class="application-item">
+                    <h4>Environmental Monitoring</h4>
+                    <p>Microfluidic sensors for water quality and environmental analysis</p>
+                </div>
+                <div class="application-item">
+                    <h4>Personalized Medicine</h4>
+                    <p>Custom devices for patient-specific therapeutic applications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Accelerate Your Research?</h2>
+            <p>Let's discuss how our custom microfluidic and biosensor solutions can advance your project.</p>
+            <a href="mailto:contact@khemion.com" class="btn-primary" style="font-size: 1.125rem; padding: 1rem 2.5rem;">Start a Conversation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>KhemI/On</h3>
+                <p>Advancing research through innovative microfluidic and biosensor technologies.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Solutions</h3>
+                <ul>
+                    <li><a href="#products">MicroNeedle Patches</a></li>
+                    <li><a href="#products">Lab-on-Chip Devices</a></li>
+                    <li><a href="#products">Organ-on-Chip Platforms</a></li>
+                    <li><a href="#capabilities">Custom Research Services</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#applications">Applications</a></li>
+                    <li><a href="#capabilities">Capabilities</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <p>Ready to discuss your research needs?</p>
+                <p style="margin-top: 0.5rem;">
+                    <a href="mailto:contact@khemion.com">contact@khemion.com</a>
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 KhemI/On. All rights reserved. | Patent-Pending Technologies</p>
+        </div>
+    </footer>
+</body>
+</html>
