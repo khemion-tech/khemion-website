@@ -922,21 +922,27 @@
                     <div class="product-image product-image-1"></div>
                     <div class="product-info">
                         <div class="product-category">Class 009 - Scientific Instruments</div>
-                        <h3>KHEMI/ON Bioreactors for Cell Culturing</h3>
-                        <p>Professional bioreactors for cell culturing designed for scientific research applications. Custom microfluidic chamber designs with integrated perfusion systems and real-time monitoring capabilities.</p>
-                        
+                        <h3>Microfluidic Lab-on-Chip and Organ-on-Chip Bioreactor</h3>
+                        <p>Advanced microfluidic bioreactor platforms for cell culturing, organ-on-chip, and biosensing research. Our bioreactors integrate microneedle arrays that function as electrochemical sensors, or can be user-functionalized for custom electrochemical sensing applications. Nanofiber membranes can be incorporated for cell substrates, filtration, or as immobilization matrices.</p>
                         <div class="product-specs">
                             <h4>Specifications</h4>
                             <ul class="spec-list">
-                                <li>Multi-chamber designs</li>
+                                <li>Multi-chamber and organ-on-chip designs</li>
                                 <li>Perfusion flow control</li>
                                 <li>Biocompatible materials</li>
+                                <li>Nanofiber membrane integration (cell substrates, filters, immobilization)</li>
+                                <li>Microneedle array with electrochemical sensor capability</li>
                                 <li>Sterile packaging</li>
                                 <li>Custom configurations</li>
                                 <li>Research documentation</li>
                             </ul>
                         </div>
-                        
+                        <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; margin: 1.5rem 0; flex-wrap: wrap;">
+                            <img src="Images/microfluidic device.jpg" alt="Microfluidic device" style="max-width: 220px; width: 100%; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                            <img src="Images/isolated MN array.png" alt="Microneedle array" style="max-width: 220px; width: 100%; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                            <img src="Images/microneedle_macro.jpg" alt="Microneedle patch macro" style="max-width: 220px; width: 100%; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                            <img src="Images/mn_patch_render.png" alt="Microneedle patch render" style="max-width: 220px; width: 100%; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        </div>
                         <button onclick="openConsultationModal()" class="quote-btn">Request Product Quote</button>
                     </div>
                 </div>
@@ -945,21 +951,24 @@
                     <div class="product-image product-image-2"></div>
                     <div class="product-info">
                         <div class="product-category">Class 010 - Medical Devices</div>
-                        <h3>KHEMI/ON Electrochemical Sensors</h3>
-                        <p>Electrochemical sensors for determination of analyte concentrations in fluids for medical purposes. Precision-engineered microfluidic platforms with integrated sensor arrays.</p>
-                        
+                        <h3>KHEMI/ON Microneedle Array Electrochemical Sensors</h3>
+                        <p>Microneedle arrays serve as advanced electrochemical sensors, or can be user-functionalized for custom sensing applications. These platforms enable direct integration with microfluidic bioreactors for real-time analyte detection in biological and medical research.</p>
+                        <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; margin: 1.5rem 0; flex-wrap: wrap;">
+                            <img src="Images/microneedle_macro.jpg" alt="Microneedle patch macro" style="max-width: 220px; width: 100%; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                            <img src="Images/mn_patch_render.png" alt="Microneedle patch render" style="max-width: 220px; width: 100%; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                            <img src="Images/usb_mn_sensor.jpg" alt="USB microneedle sensor" style="max-width: 220px; width: 100%; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        </div>
                         <div class="product-specs">
                             <h4>Specifications</h4>
                             <ul class="spec-list">
-                                <li>Analyte detection</li>
-                                <li>Medical fluid analysis</li>
+                                <li>Microneedle array with electrochemical sensor capability</li>
+                                <li>Analyte detection in fluids and tissues</li>
                                 <li>Microfluidic integration</li>
                                 <li>High sensitivity</li>
-                                <li>Medical-grade materials</li>
-                                <li>Calibration protocols</li>
+                                <li>Medical-grade and biocompatible materials</li>
+                                <li>Custom functionalization available</li>
                             </ul>
                         </div>
-                        
                         <button onclick="openConsultationModal()" class="quote-btn">Request Product Quote</button>
                     </div>
                 </div>
@@ -1265,8 +1274,10 @@
     <!-- Consultation Modal -->
     <div class="modal-overlay" id="consultationModal" onclick="closeModalOnOverlay(event)">
         <div class="modal-container">
-            <div class="modal-header">
-                <h2>Request Product Quote</h2>
+            <div class="modal-header" style="text-align: center;">
+                <img src="logo.svg" alt="KhemI/On Logo" style="height: 48px; margin-bottom: 0.5rem; display: block; margin-left: auto; margin-right: auto;">
+                <div style="font-family: var(--logo-font); font-size: 1.5rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; margin-bottom: 0.5rem;">KhemI/On</div>
+                <h2 style="color: #fff;">Request Product Quote</h2>
                 <p>Get pricing and specifications for KHEMI/ON products or engineering services</p>
                 <button class="close-btn" onclick="closeConsultationModal()">&times;</button>
             </div>
