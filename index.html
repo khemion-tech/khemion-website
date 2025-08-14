@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KhemI/On - Advanced Microfluidics & Biosensor Solutions</title>
-    <meta name="description" content="Design and manufacturing of custom Lab-on-Chip, Organ-on-Chip, and MicroNeedle devices for biosensor research and development.">
+    <title>KhemI/On - Professional Microfluidic Design & Manufacturing Services</title>
+    <meta name="description" content="Professional design and manufacturing services for research-grade microfluidic patches, lab-on-chip devices, and PalmSens Sensit compatible solutions. AFRL Regional Network member.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ffffff'/><rect width='28' height='28' x='2' y='2' rx='4' fill='%231a365d'/><text x='16' y='21' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-size='8' font-weight='bold'>K/O</text></svg>" type="image/svg+xml">
     
     <style>
         * {
@@ -22,6 +26,8 @@
             --bg-light: #f7fafc;
             --bg-white: #ffffff;
             --border-color: #e2e8f0;
+            --logo-font: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --heading-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         body {
@@ -51,10 +57,26 @@
         }
         
         .logo {
-            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.75rem;
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
+            font-family: var(--logo-font);
+            letter-spacing: -0.02em;
+        }
+        
+        .logo-img {
+            height: 60px;
+            width: auto;
+            filter: brightness(0) saturate(100%) invert(9%) sepia(48%) saturate(2618%) hue-rotate(202deg) brightness(96%) contrast(89%);
+        }
+        
+        .logo-img:hover {
+            filter: brightness(0) saturate(100%) invert(32%) sepia(85%) saturate(1441%) hue-rotate(202deg) brightness(94%) contrast(91%);
+            transition: filter 0.3s ease;
         }
         
         .nav-links {
@@ -67,6 +89,8 @@
             color: var(--text-dark);
             text-decoration: none;
             font-weight: 500;
+            font-family: var(--heading-font);
+            letter-spacing: -0.01em;
             transition: color 0.3s;
         }
         
@@ -103,9 +127,11 @@
         }
         
         .hero h1 {
-            font-size: 2.5rem;
+            font-family: var(--heading-font);
+            font-size: 2.75rem;
             margin-bottom: 1.5rem;
-            font-weight: 700;
+            font-weight: 800;
+            letter-spacing: -0.025em;
         }
         
         .hero .subtitle {
@@ -118,6 +144,12 @@
             display: inline-flex;
             gap: 1rem;
             margin-top: 1rem;
+        }
+        
+        .btn-primary, .btn-secondary, .cta-button {
+            font-family: var(--heading-font);
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
         
         .btn-primary {
@@ -157,6 +189,12 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+        }
+        
+        h1, h2, h3 {
+            font-family: var(--heading-font);
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
         
         h2 {
@@ -204,6 +242,9 @@
             color: var(--secondary-color);
             margin-bottom: 1rem;
             font-size: 1.25rem;
+            font-family: var(--heading-font);
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
         
         .capability-card p {
@@ -248,6 +289,9 @@
         .product-header h3 {
             font-size: 1.25rem;
             margin-bottom: 0.5rem;
+            font-family: var(--heading-font);
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
         
         .product-body {
@@ -292,6 +336,9 @@
         .tech-highlight h3 {
             color: var(--primary-color);
             margin-bottom: 1rem;
+            font-family: var(--heading-font);
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
         
         /* Applications */
@@ -313,6 +360,9 @@
         .application-item h4 {
             color: var(--secondary-color);
             margin-bottom: 0.5rem;
+            font-family: var(--heading-font);
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
         
         /* CTA Section */
@@ -326,6 +376,9 @@
         .cta-section h2 {
             color: white;
             margin-bottom: 1rem;
+            font-family: var(--heading-font);
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
         
         .cta-section p {
@@ -353,6 +406,9 @@
         .footer-section h3 {
             margin-bottom: 1rem;
             font-size: 1.125rem;
+            font-family: var(--heading-font);
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
         
         .footer-section p, .footer-section ul {
@@ -408,13 +464,16 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="logo">KhemI/On</a>
+            <a href="#" class="logo">
+                <img src="logo.svg" alt="KhemI/On Logo" class="logo-img">
+                KhemI/On
+            </a>
             <ul class="nav-links">
-                <li><a href="#capabilities">Capabilities</a></li>
-                <li><a href="#products">Products</a></li>
+                <li><a href="#capabilities">Services</a></li>
+                <li><a href="#products">Custom Design</a></li>
                 <li><a href="#technology">Technology</a></li>
                 <li><a href="#applications">Applications</a></li>
-                <li><a href="#contact" class="cta-button">Contact Us</a></li>
+                <li><a href="#contact" class="cta-button">Request Consultation</a></li>
             </ul>
         </nav>
     </header>
@@ -422,11 +481,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Advanced Microfluidics & Biosensor Solutions</h1>
-            <p class="subtitle">Design and Manufacturing of Custom Lab-on-Chip, Organ-on-Chip, and MicroNeedle Devices for Cutting-Edge Research</p>
+            <h1>Custom Microfluidic Patch Design & Manufacturing</h1>
+            <p class="subtitle">Professional design and manufacturing services for research-grade Lab-on-Chip, Organ-on-Chip, and MicroNeedle devices. Compatible with PalmSens Sensit and other leading biosensor platforms.</p>
             <div class="hero-cta">
-                <a href="#contact" class="btn-primary">Request Consultation</a>
-                <a href="#capabilities" class="btn-secondary">Explore Capabilities</a>
+                <a href="#contact" class="btn-primary">Request Custom Design</a>
+                <a href="#capabilities" class="btn-secondary">View Our Services</a>
             </div>
         </div>
     </section>
@@ -434,44 +493,44 @@
     <!-- Capabilities Section -->
     <section class="capabilities" id="capabilities">
         <div class="container">
-            <h2>Our Capabilities</h2>
-            <p class="section-intro">Patent-pending manufacturing technologies enabling integration of bio-compatible nanofiber, microneedle, and electrochemical sensor components into composite milli and microfluidic devices.</p>
+            <h2>Custom Manufacturing Services</h2>
+            <p class="section-intro">Professional design and manufacturing services for research-grade microfluidic devices. Patent-pending manufacturing technologies enabling integration of bio-compatible nanofiber, microneedle, and electrochemical sensor components.</p>
             
             <div class="capabilities-grid">
                 <div class="capability-card">
                     <div class="capability-icon"></div>
-                    <h3>Custom Lab-on-Chip Design</h3>
-                    <p>Tailored microfluidic device design and prototyping for specific research applications. From concept to functional prototype with rapid iteration capabilities.</p>
+                    <h3>PalmSens Sensit Integration</h3>
+                    <p>Expert design services for microfluidic patches specifically optimized for PalmSens Sensit compatibility, ensuring seamless electrochemical sensing integration.</p>
                 </div>
                 
                 <div class="capability-card">
                     <div class="capability-icon"></div>
-                    <h3>Organ-on-Chip Devices</h3>
-                    <p>Precision-engineered organ-on-chip platforms (device only) designed for tissue culture and drug testing applications with customizable channel geometries.</p>
+                    <h3>Custom Patch Manufacturing</h3>
+                    <p>End-to-end manufacturing service for research-grade microfluidic patches with custom electrode configurations, biocompatible materials, and comprehensive design support.</p>
                 </div>
                 
                 <div class="capability-card">
                     <div class="capability-icon"></div>
-                    <h3>MicroNeedle Arrays</h3>
-                    <p>Advanced microneedle patches optimized for wearable biosensor integration, transdermal delivery, and minimally invasive sampling applications.</p>
+                    <h3>Lab-on-Chip Design Services</h3>
+                    <p>Complete design consultation and manufacturing for custom lab-on-chip devices, from initial concept to functional prototypes with validation testing.</p>
                 </div>
                 
                 <div class="capability-card">
                     <div class="capability-icon"></div>
-                    <h3>Electrochemical Integration</h3>
-                    <p>Seamless integration of electrochemical sensors into microfluidic systems for real-time monitoring and detection capabilities.</p>
+                    <h3>Organ-on-Chip Manufacturing</h3>
+                    <p>Professional manufacturing services for organ-on-chip platforms with custom chamber designs optimized for tissue culture and drug testing applications.</p>
                 </div>
                 
                 <div class="capability-card">
                     <div class="capability-icon"></div>
-                    <h3>Biocompatible Materials</h3>
-                    <p>Expertise in biocompatible nanofiber integration and surface functionalization for enhanced biological interactions.</p>
+                    <h3>Research Documentation</h3>
+                    <p>Complete technical documentation packages including CAD files, protocols, validation data, and ongoing technical support for your research applications.</p>
                 </div>
                 
                 <div class="capability-card">
                     <div class="capability-icon"></div>
-                    <h3>Research Services</h3>
-                    <p>Comprehensive research-as-a-service offerings, from feasibility studies to full device development and validation support.</p>
+                    <h3>Advanced Prototyping</h3>
+                    <p>Comprehensive design and manufacturing service for functional prototypes, enabling iterative development and research validation across multiple design cycles.</p>
                 </div>
             </div>
         </div>
@@ -480,42 +539,96 @@
     <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
-            <h2>Product Solutions</h2>
-            <p class="section-intro">Specialized devices and platforms designed to accelerate your research and development initiatives.</p>
+            <h2>Custom Design Services</h2>
+            <p class="section-intro">Professional microfluidic device design and manufacturing tailored to your research needs.</p>
             
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-header">
-                        <h3>MicroNeedle Biosensor Patches</h3>
-                        <p>Next-generation wearable biosensor research platforms</p>
+                        <h3>Custom Patch Manufacturing</h3>
+                        <p>Research-grade microfluidic patches for electrochemical sensing</p>
                     </div>
                     <div class="product-body">
-                        <p>Our microneedle patches are specifically engineered for biosensor research applications, offering unprecedented access to interstitial fluid biomarkers.</p>
+                        <p>Custom microfluidic patches designed specifically for research applications with PalmSens Sensit compatibility. Professional manufacturing with complete design consultation.</p>
                         <ul class="product-features">
-                            <li>Customizable needle geometry and density</li>
-                            <li>Integrated electrochemical sensing capabilities</li>
-                            <li>Biocompatible polymer construction</li>
-                            <li>Scalable manufacturing process</li>
-                            <li>Support for multi-analyte detection</li>
+                            <li>Full PalmSens Sensit integration</li>
+                            <li>Custom electrode configurations</li>
+                            <li>Biocompatible materials & adhesives</li>
+                            <li>Professional manufacturing process</li>
+                            <li>Research documentation included</li>
+                            <li>Flexible production volumes</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="product-card">
                     <div class="product-header">
-                        <h3>Custom Microfluidic Devices</h3>
-                        <p>Lab-on-chip and organ-on-chip platforms</p>
+                        <h3>Custom Lab-on-Chip Manufacturing</h3>
+                        <p>Precision-engineered microfluidic devices for research</p>
                     </div>
                     <div class="product-body">
-                        <p>Precision-engineered microfluidic devices tailored to your specific research requirements, from simple flow cells to complex multi-chamber systems.</p>
+                        <p>Complete design-to-manufacturing service for custom lab-on-chip devices. From concept sketches to functional prototypes with validation testing.</p>
                         <ul class="product-features">
-                            <li>Custom channel geometries and layouts</li>
-                            <li>Multiple material options available</li>
-                            <li>Integrated valving and pumping options</li>
-                            <li>Optical transparency for imaging</li>
-                            <li>Rapid prototyping capabilities</li>
+                            <li>End-to-end design consultation</li>
+                            <li>Multi-material fabrication capabilities</li>
+                            <li>Integrated sensor compatibility</li>
+                            <li>Microfluidic flow validation</li>
+                            <li>Research protocol development</li>
+                            <li>Technical documentation package</li>
                         </ul>
                     </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>Organ-on-Chip Platforms</h3>
+                        <p>Advanced tissue culture and drug testing devices</p>
+                    </div>
+                    <div class="product-body">
+                        <p>Professional organ-on-chip device manufacturing service with custom chamber designs optimized for your specific tissue culture requirements.</p>
+                        <ul class="product-features">
+                            <li>Application-specific chamber geometry</li>
+                            <li>Perfusion system integration</li>
+                            <li>Real-time monitoring compatibility</li>
+                            <li>Sterile packaging & handling</li>
+                            <li>Protocol optimization support</li>
+                            <li>Ongoing technical consultation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" style="background: var(--bg-light); padding: 4rem 2rem;">
+        <div class="container">
+            <h2>Our Custom Design Process</h2>
+            <p class="section-intro">From concept to functional device in 4 simple steps</p>
+            
+            <div class="process-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="process-step" style="background: white; padding: 2rem; border-radius: 0.5rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div class="step-number" style="width: 60px; height: 60px; background: var(--accent-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; font-family: var(--heading-font);">1</div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-family: var(--heading-font); font-weight: 600; letter-spacing: -0.01em;">Consultation</h3>
+                    <p style="color: var(--text-light);">Share your research requirements, target applications, and technical specifications with our design team.</p>
+                </div>
+                
+                <div class="process-step" style="background: white; padding: 2rem; border-radius: 0.5rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div class="step-number" style="width: 60px; height: 60px; background: var(--accent-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; font-family: var(--heading-font);">2</div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-family: var(--heading-font); font-weight: 600; letter-spacing: -0.01em;">Design & Prototyping</h3>
+                    <p style="color: var(--text-light);">Our engineers create custom designs optimized for your application, including CAD files and flow simulations.</p>
+                </div>
+                
+                <div class="process-step" style="background: white; padding: 2rem; border-radius: 0.5rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div class="step-number" style="width: 60px; height: 60px; background: var(--accent-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; font-family: var(--heading-font);">3</div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-family: var(--heading-font); font-weight: 600; letter-spacing: -0.01em;">Manufacturing</h3>
+                    <p style="color: var(--text-light);">Precision manufacturing using our patent-pending processes with quality validation and testing.</p>
+                </div>
+                
+                <div class="process-step" style="background: white; padding: 2rem; border-radius: 0.5rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div class="step-number" style="width: 60px; height: 60px; background: var(--accent-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; font-family: var(--heading-font);">4</div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-family: var(--heading-font); font-weight: 600; letter-spacing: -0.01em;">Delivery & Support</h3>
+                    <p style="color: var(--text-light);">Receive your custom devices with complete documentation, protocols, and ongoing technical support.</p>
                 </div>
             </div>
         </div>
@@ -531,6 +644,12 @@
                 <h3>Proprietary Manufacturing Process</h3>
                 <p>Our unique manufacturing approach enables the seamless integration of multiple functional components that traditionally require separate fabrication processes. This includes the ability to combine biocompatible nanofibers, precision microneedles, and sensitive electrochemical sensors within a single device architecture.</p>
                 <p style="margin-top: 1rem;">The result is a new class of composite devices that offer enhanced functionality, improved reliability, and reduced complexity for researchers pushing the boundaries of biosensing and microfluidic applications.</p>
+            </div>
+            
+            <div class="tech-highlight" style="margin-top: 1.5rem;">
+                <h3>Partnered Innovation</h3>
+                <p>KhemI/On is a proud member of the <a href="https://midwesthub.afresearchlab.com/partnerships/" target="_blank" style="color: var(--accent-color); text-decoration: none;">AFRL Regional Network – Midwest Hub</a>, connecting our research and development capabilities with leading academic institutions, industry partners, and government agencies. This partnership provides access to cutting-edge research networks and enables us to deliver solutions that meet the highest standards for defense and commercial applications.</p>
+                <p style="margin-top: 1rem;">Our partnership with the Air Force Research Laboratory network enhances our ability to develop innovative microfluidic solutions that address real-world challenges in biosensing, diagnostics, and advanced materials integration.</p>
             </div>
             
             <div class="tech-highlight" style="margin-top: 1.5rem;">
@@ -578,9 +697,13 @@
     <!-- CTA Section -->
     <section class="cta-section" id="contact">
         <div class="container">
-            <h2>Ready to Accelerate Your Research?</h2>
-            <p>Let's discuss how our custom microfluidic and biosensor solutions can advance your project.</p>
-            <a href="mailto:contact@khemion.com" class="btn-primary" style="font-size: 1.125rem; padding: 1rem 2.5rem;">Start a Conversation</a>
+            <h2>Ready to Design Your Custom Microfluidic Solution?</h2>
+            <p>Start your project with a free consultation. Our team will work with you to design and manufacture the perfect device for your research needs.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+                <a href="mailto:contact@khemion.com?subject=Custom Design Consultation Request" class="btn-primary" style="font-size: 1.125rem; padding: 1rem 2.5rem;">Request Free Consultation</a>
+                <a href="mailto:contact@khemion.com?subject=Technical Specifications Inquiry" class="btn-secondary" style="color: white; border-color: white; font-size: 1.125rem; padding: 1rem 2.5rem;">Get Technical Specs</a>
+            </div>
+            <p style="margin-top: 1.5rem; opacity: 0.9; font-size: 0.95rem;">✓ Professional manufacturing process &nbsp;&nbsp; ✓ PalmSens Sensit compatibility &nbsp;&nbsp; ✓ Full design documentation</p>
         </div>
     </section>
 
@@ -589,35 +712,37 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>KhemI/On</h3>
-                <p>Advancing research through innovative microfluidic and biosensor technologies.</p>
+                <p>Professional microfluidic device design and manufacturing services for research institutions and biotech companies. Member of the AFRL Regional Network – Midwest Hub.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">✓ PalmSens Sensit Compatible<br>✓ AFRL Partnership<br>✓ Complete Documentation</p>
             </div>
             
             <div class="footer-section">
-                <h3>Solutions</h3>
+                <h3>Design Services</h3>
                 <ul>
-                    <li><a href="#products">MicroNeedle Patches</a></li>
-                    <li><a href="#products">Lab-on-Chip Devices</a></li>
+                    <li><a href="#products">Custom Patch Design</a></li>
+                    <li><a href="#products">Lab-on-Chip Manufacturing</a></li>
                     <li><a href="#products">Organ-on-Chip Platforms</a></li>
-                    <li><a href="#capabilities">Custom Research Services</a></li>
+                    <li><a href="#capabilities">Advanced Prototyping</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h3>Company</h3>
                 <ul>
-                    <li><a href="#technology">Technology</a></li>
-                    <li><a href="#applications">Applications</a></li>
-                    <li><a href="#capabilities">Capabilities</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#technology">Manufacturing Process</a></li>
+                    <li><a href="#applications">Research Applications</a></li>
+                    <li><a href="#capabilities">Our Services</a></li>
+                    <li><a href="#contact">Free Consultation</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
-                <h3>Connect</h3>
-                <p>Ready to discuss your research needs?</p>
+                <h3>Get Started</h3>
+                <p>Ready to discuss your custom microfluidic device needs?</p>
                 <p style="margin-top: 0.5rem;">
-                    <a href="mailto:contact@khemion.com">contact@khemion.com</a>
+                    <a href="mailto:contact@khemion.com?subject=Custom Design Consultation">contact@khemion.com</a>
                 </p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">Free consultation • Technical specs provided • Research-focused solutions</p>
             </div>
         </div>
         
