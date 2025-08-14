@@ -56,27 +56,13 @@
             align-items: center;
         }
         
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        .nav-brand {
             font-size: 1.75rem;
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
             font-family: var(--logo-font);
             letter-spacing: -0.02em;
-        }
-        
-        .logo-img {
-            height: 60px;
-            width: auto;
-            filter: brightness(0) saturate(100%) invert(9%) sepia(48%) saturate(2618%) hue-rotate(202deg) brightness(96%) contrast(89%);
-        }
-        
-        .logo-img:hover {
-            filter: brightness(0) saturate(100%) invert(32%) sepia(85%) saturate(1441%) hue-rotate(202deg) brightness(94%) contrast(91%);
-            transition: filter 0.3s ease;
         }
         
         .nav-links {
@@ -123,12 +109,45 @@
             padding: 4rem 2rem;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .hero-logo-img {
+            height: 120px;
+            width: auto;
+            filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-logo-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .hero-logo-text {
+            font-family: var(--logo-font);
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
             text-align: center;
         }
         
         .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
+            text-align: left;
         }
         
         .hero h1 {
@@ -146,7 +165,7 @@
         }
         
         .hero-cta {
-            display: inline-flex;
+            display: flex;
             gap: 1rem;
             margin-top: 1rem;
         }
@@ -665,6 +684,24 @@
                 display: none;
             }
             
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-logo-img {
+                height: 80px;
+            }
+            
+            .hero-logo-text {
+                font-size: 1.5rem;
+            }
+            
             .hero h1 {
                 font-size: 2rem;
             }
@@ -711,10 +748,7 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="logo">
-                <img src="logo.svg" alt="KhemI/On Logo" class="logo-img">
-                KhemI/On
-            </a>
+            <a href="#" class="nav-brand">KhemI/On</a>
             <ul class="nav-links">
                 <li><a href="#capabilities">Services</a></li>
                 <li><a href="#products">Custom Design</a></li>
@@ -727,12 +761,18 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Custom Microfluidic Patch Design & Manufacturing</h1>
-            <p class="subtitle">Professional design and manufacturing services for research-grade Lab-on-Chip, Organ-on-Chip, and MicroNeedle devices. Compatible with PalmSens Sensit and other leading biosensor platforms.</p>
-            <div class="hero-cta">
-                <button onclick="openConsultationModal()" class="btn-primary">Request Custom Design</button>
-                <a href="#capabilities" class="btn-secondary">View Our Services</a>
+        <div class="hero-container">
+            <div class="hero-logo">
+                <img src="logo.svg" alt="KhemI/On Logo" class="hero-logo-img">
+                <div class="hero-logo-text">KhemI/On</div>
+            </div>
+            <div class="hero-content">
+                <h1>Custom Microfluidic Patch Design & Manufacturing</h1>
+                <p class="subtitle">Professional design and manufacturing services for research-grade Lab-on-Chip, Organ-on-Chip, and MicroNeedle devices. Compatible with PalmSens Sensit and other leading biosensor platforms.</p>
+                <div class="hero-cta">
+                    <button onclick="openConsultationModal()" class="btn-primary">Request Custom Design</button>
+                    <a href="#capabilities" class="btn-secondary">View Our Services</a>
+                </div>
             </div>
         </div>
     </section>
