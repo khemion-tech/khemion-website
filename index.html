@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KhemI/On - Professional Microfluidic Design & Manufacturing Services</title>
-    <meta name="description" content="Professional design and manufacturing services for research-grade microfluidic patches, lab-on-chip devices, and PalmSens Sensit compatible solutions. AFRL Regional Network member.">
+    <title>KhemI/On - Microfluidic Bioreactors & Electrochemical Sensors</title>
+    <meta name="description" content="KHEMI/ON bioreactors for cell culturing research and electrochemical sensors for medical diagnostics. Professional microfluidic device manufacturing nationwide.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -161,7 +161,7 @@
             margin-top: 1rem;
         }
         
-        .btn-primary, .btn-secondary, .cta-button {
+        .btn-primary, .btn-secondary, .cta-button, .quote-btn {
             font-family: var(--heading-font);
             font-weight: 600;
             letter-spacing: -0.01em;
@@ -200,6 +200,26 @@
         .btn-secondary:hover {
             background: rgba(255,255,255,0.1);
         }
+
+        .quote-btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .quote-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-1px);
+        }
         
         /* Section Styles */
         section {
@@ -231,6 +251,120 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .product-showcase {
+            background: var(--bg-white);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-showcase:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: rgba(255,255,255,0.1);
+            border-radius: 0.5rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .product-image-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .product-image-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .product-image-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .product-info {
+            padding: 2rem;
+        }
+        
+        .product-category {
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-family: var(--heading-font);
+            font-weight: 700;
+        }
+        
+        .product-info p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .product-specs {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-specs h4 {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-family: var(--heading-font);
+            font-weight: 600;
+        }
+        
+        .spec-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .spec-list li {
+            list-style: none;
+            color: var(--text-light);
+        }
+        
+        .spec-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+            font-weight: bold;
         }
         
         /* Capabilities Grid */
@@ -281,32 +415,37 @@
             opacity: 0.1;
         }
         
-        /* Products Section */
-        .products-grid {
+        /* Custom Design Section */
+        .custom-design {
+            background: var(--bg-light);
+        }
+        
+        .design-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
         
-        .product-card {
+        .design-card {
             border: 1px solid var(--border-color);
             border-radius: 0.5rem;
             overflow: hidden;
             transition: box-shadow 0.3s;
+            background: white;
         }
         
-        .product-card:hover {
+        .design-card:hover {
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
-        .product-header {
+        .design-header {
             background: var(--primary-color);
             color: white;
             padding: 1.5rem;
         }
         
-        .product-header h3 {
+        .design-header h3 {
             font-size: 1.25rem;
             margin-bottom: 0.5rem;
             font-family: var(--heading-font);
@@ -314,26 +453,26 @@
             letter-spacing: -0.01em;
         }
         
-        .product-body {
+        .design-body {
             padding: 1.5rem;
         }
         
-        .product-features {
+        .design-features {
             list-style: none;
             margin-top: 1rem;
         }
         
-        .product-features li {
+        .design-features li {
             padding: 0.5rem 0;
             border-bottom: 1px solid var(--border-color);
             color: var(--text-light);
         }
         
-        .product-features li:last-child {
+        .design-features li:last-child {
             border-bottom: none;
         }
         
-        .product-features li::before {
+        .design-features li::before {
             content: "✓ ";
             color: var(--accent-color);
             font-weight: bold;
@@ -342,7 +481,7 @@
         
         /* Technology Section */
         .technology {
-            background: var(--bg-light);
+            background: var(--bg-white);
         }
         
         .tech-highlight {
@@ -351,6 +490,7 @@
             border-radius: 0.5rem;
             margin-top: 2rem;
             border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         
         .tech-highlight h3 {
@@ -703,6 +843,14 @@
                 text-align: center;
             }
 
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .spec-list {
+                grid-template-columns: 1fr;
+            }
+
             .modal-container {
                 width: 95%;
                 margin: 1rem;
@@ -737,11 +885,11 @@
         <nav>
             <a href="#" class="nav-brand">KhemI/On</a>
             <ul class="nav-links">
+                <li><a href="#products">Products</a></li>
+                <li><a href="#custom-design">Custom Design</a></li>
                 <li><a href="#capabilities">Services</a></li>
-                <li><a href="#products">Custom Design</a></li>
                 <li><a href="#technology">Technology</a></li>
-                <li><a href="#applications">Applications</a></li>
-                <li><button onclick="openConsultationModal()" class="cta-button">Request Consultation</button></li>
+                <li><button onclick="openConsultationModal()" class="cta-button">Request Quote</button></li>
             </ul>
         </nav>
     </header>
@@ -753,11 +901,163 @@
                 <img src="logo.svg" alt="KhemI/On Logo" class="hero-logo-img">
             </div>
             <div class="hero-content">
-                <h1>Custom Microfluidic Patch Design & Manufacturing</h1>
-                <p class="subtitle">Professional design and manufacturing services for research-grade Lab-on-Chip, Organ-on-Chip, and MicroNeedle devices. KHEMI/ON serves research institutions and biotech companies nationwide with custom microfluidic solutions compatible with PalmSens Sensit and other leading biosensor platforms.</p>
+                <h1>KHEMI/ON Microfluidic Devices</h1>
+                <p class="subtitle">Professional bioreactors for cell culturing research and electrochemical sensors for medical diagnostics. KHEMI/ON serves research institutions and biotech companies nationwide with manufactured devices and custom design services.</p>
                 <div class="hero-cta">
-                    <button onclick="openConsultationModal()" class="btn-primary">Request Custom Design</button>
-                    <a href="#capabilities" class="btn-secondary">View Our Services</a>
+                    <a href="#products" class="btn-primary">View Products</a>
+                    <button onclick="openConsultationModal()" class="btn-secondary">Request Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section - NEW FOR USPTO GOODS -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2>KHEMI/ON Products</h2>
+            <p class="section-intro">Manufactured microfluidic devices available for order. Professional bioreactors and electrochemical sensors for scientific research and medical applications.</p>
+            
+            <div class="products-grid">
+                <div class="product-showcase">
+                    <div class="product-image product-image-1"></div>
+                    <div class="product-info">
+                        <div class="product-category">Class 009 - Scientific Instruments</div>
+                        <h3>KHEMI/ON Bioreactors for Cell Culturing</h3>
+                        <p>Professional bioreactors for cell culturing designed for scientific research applications. Custom microfluidic chamber designs with integrated perfusion systems and real-time monitoring capabilities.</p>
+                        
+                        <div class="product-specs">
+                            <h4>Specifications</h4>
+                            <ul class="spec-list">
+                                <li>Multi-chamber designs</li>
+                                <li>Perfusion flow control</li>
+                                <li>Biocompatible materials</li>
+                                <li>Sterile packaging</li>
+                                <li>Custom configurations</li>
+                                <li>Research documentation</li>
+                            </ul>
+                        </div>
+                        
+                        <button onclick="openConsultationModal()" class="quote-btn">Request Product Quote</button>
+                    </div>
+                </div>
+
+                <div class="product-showcase">
+                    <div class="product-image product-image-2"></div>
+                    <div class="product-info">
+                        <div class="product-category">Class 010 - Medical Devices</div>
+                        <h3>KHEMI/ON Electrochemical Sensors</h3>
+                        <p>Electrochemical sensors for determination of analyte concentrations in fluids for medical purposes. Precision-engineered microfluidic platforms with integrated sensor arrays.</p>
+                        
+                        <div class="product-specs">
+                            <h4>Specifications</h4>
+                            <ul class="spec-list">
+                                <li>Analyte detection</li>
+                                <li>Medical fluid analysis</li>
+                                <li>Microfluidic integration</li>
+                                <li>High sensitivity</li>
+                                <li>Medical-grade materials</li>
+                                <li>Calibration protocols</li>
+                            </ul>
+                        </div>
+                        
+                        <button onclick="openConsultationModal()" class="quote-btn">Request Product Quote</button>
+                    </div>
+                </div>
+
+                <div class="product-showcase">
+                    <div class="product-image product-image-3"></div>
+                    <div class="product-info">
+                        <div class="product-category">Research Platforms</div>
+                        <h3>KHEMI/ON Microneedle Arrays</h3>
+                        <p>Advanced microneedle array platforms for biosensor applications. Custom configurations with 100-2500 needles/cm² and heights from 200-1500 μm for diverse research needs.</p>
+                        
+                        <div class="product-specs">
+                            <h4>Specifications</h4>
+                            <ul class="spec-list">
+                                <li>100-2500 needles/cm²</li>
+                                <li>200-1500 μm height</li>
+                                <li>Sensor integration</li>
+                                <li>PalmSens compatible</li>
+                                <li>Optical transparency</li>
+                                <li>Custom geometries</li>
+                            </ul>
+                        </div>
+                        
+                        <button onclick="openConsultationModal()" class="quote-btn">Request Product Quote</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: var(--bg-light); padding: 2rem; border-radius: 0.5rem; margin-top: 3rem; text-align: center;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">How to Order KHEMI/ON Products</h3>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem;">All KHEMI/ON devices are manufactured to order with custom specifications. Contact our team for product quotes, technical specifications, and delivery timelines.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <button onclick="openConsultationModal()" class="cta-button" style="padding: 0.75rem 2rem;">Get Product Quote</button>
+                    <button onclick="openConsultationModal()" class="btn-secondary" style="background: transparent; color: var(--primary-color); border-color: var(--primary-color); padding: 0.75rem 2rem;">Technical Consultation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Design Services Section -->
+    <section class="custom-design" id="custom-design">
+        <div class="container">
+            <h2>Custom Design Services</h2>
+            <p class="section-intro">Product development and engineering services for others. Professional microfluidic device design and manufacturing tailored to your research needs.</p>
+            
+            <div class="design-grid">
+                <div class="design-card">
+                    <div class="design-header">
+                        <h3>Custom Bioreactor Design</h3>
+                        <p>Specialized cell culturing platforms for research</p>
+                    </div>
+                    <div class="design-body">
+                        <p>Custom bioreactor design and manufacturing service for unique cell culturing applications. Professional engineering consultation from concept to functional device.</p>
+                        <ul class="design-features">
+                            <li>Application-specific chamber design</li>
+                            <li>Perfusion system integration</li>
+                            <li>Real-time monitoring compatibility</li>
+                            <li>Sterile fabrication protocols</li>
+                            <li>Complete documentation package</li>
+                            <li>Ongoing technical support</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="design-card">
+                    <div class="design-header">
+                        <h3>Electrochemical Sensor Development</h3>
+                        <p>Medical diagnostic sensor engineering</p>
+                    </div>
+                    <div class="design-body">
+                        <p>Professional development of electrochemical sensors for medical fluid analysis. Complete engineering service from initial requirements through validated prototypes.</p>
+                        <ul class="design-features">
+                            <li>Medical application design</li>
+                            <li>Analyte-specific optimization</li>
+                            <li>Sensitivity validation testing</li>
+                            <li>Medical device compliance</li>
+                            <li>Protocol development</li>
+                            <li>Technical documentation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="design-card">
+                    <div class="design-header">
+                        <h3>Microfluidic Platform Engineering</h3>
+                        <p>Complete system design and development</p>
+                    </div>
+                    <div class="design-body">
+                        <p>End-to-end engineering services for complex microfluidic platforms. Professional product development from concept sketches to functional prototypes.</p>
+                        <ul class="design-features">
+                            <li>Multi-disciplinary engineering</li>
+                            <li>Flow simulation and validation</li>
+                            <li>Material selection and testing</li>
+                            <li>Manufacturing process development</li>
+                            <li>Quality assurance protocols</li>
+                            <li>Scalable production planning</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -766,176 +1066,44 @@
     <!-- Capabilities Section -->
     <section class="capabilities" id="capabilities">
         <div class="container">
-            <h2>Custom Manufacturing Services</h2>
-            <p class="section-intro">Professional design and manufacturing services for research-grade microfluidic devices. Patent-pending manufacturing technologies enabling integration of bio-compatible nanofiber, microneedle, and electrochemical sensor components.</p>
+            <h2>Manufacturing Capabilities</h2>
+            <p class="section-intro">Professional manufacturing services with patent-pending technologies enabling integration of bio-compatible nanofiber, microneedle, and electrochemical sensor components.</p>
             
             <div class="capabilities-grid">
                 <div class="capability-card">
                     <div class="capability-icon"></div>
-                    <h3>KHEMI/ON Manufacturing Services</h3>
-                    <p>Professional microfluidic device design, prototyping, and manufacturing services under the KHEMI/ON brand. Serving research institutions and biotech companies nationwide with custom solutions.</p>
+                    <h3>KHEMI/ON Product Manufacturing</h3>
+                    <p>Professional manufacturing of KHEMI/ON branded bioreactors, electrochemical sensors, and microfluidic devices. Serving research institutions and biotech companies nationwide.</p>
                 </div>
                 
                 <div class="capability-card">
                     <div class="capability-icon"></div>
-                    <h3>PalmSens Sensit Integration</h3>
-                    <p>Expert design services for microfluidic patches specifically optimized for PalmSens Sensit compatibility, ensuring seamless electrochemical sensing integration.</p>
+                    <h3>Bioreactor Fabrication</h3>
+                    <p>Specialized manufacturing of bioreactors for cell culturing research with custom chamber designs, perfusion systems, and biocompatible materials.</p>
                 </div>
                 
                 <div class="capability-card">
                     <div class="capability-icon"></div>
-                    <h3>Custom Patch Manufacturing</h3>
-                    <p>End-to-end manufacturing service for research-grade microfluidic patches with custom electrode configurations, biocompatible materials, and comprehensive design support.</p>
+                    <h3>Sensor Integration</h3>
+                    <p>Professional integration of electrochemical sensors into microfluidic platforms for medical diagnostic applications and research instrumentation.</p>
                 </div>
                 
                 <div class="capability-card">
                     <div class="capability-icon"></div>
-                    <h3>Lab-on-Chip Design Services</h3>
-                    <p>Complete design consultation and manufacturing for custom lab-on-chip devices, from initial concept to functional prototypes with validation testing.</p>
+                    <h3>PalmSens Sensit Compatible</h3>
+                    <p>Expert design and manufacturing of microfluidic devices specifically optimized for PalmSens Sensit compatibility, ensuring seamless integration.</p>
                 </div>
                 
                 <div class="capability-card">
                     <div class="capability-icon"></div>
-                    <h3>Organ-on-Chip Manufacturing</h3>
-                    <p>Professional manufacturing services for organ-on-chip platforms with custom chamber designs optimized for tissue culture and drug testing applications.</p>
+                    <h3>Custom Microneedle Arrays</h3>
+                    <p>Precision manufacturing of microneedle arrays with custom geometries, densities, and sensor integration for advanced biosensor applications.</p>
                 </div>
                 
                 <div class="capability-card">
                     <div class="capability-icon"></div>
-                    <h3>Research Documentation</h3>
-                    <p>Complete technical documentation packages including CAD files, protocols, validation data, and ongoing technical support for your research applications.</p>
-                </div>
-                
-                <div class="capability-card">
-                    <div class="capability-icon"></div>
-                    <h3>Advanced Prototyping</h3>
-                    <p>Comprehensive design and manufacturing service for functional prototypes, enabling iterative development and research validation across multiple design cycles.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="products" id="products">
-        <div class="container">
-            <h2>Custom Design Services</h2>
-            <p class="section-intro">Professional microfluidic device design and manufacturing tailored to your research needs.</p>
-            
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-header">
-                        <h3>Custom Patch Manufacturing</h3>
-                        <p>Research-grade microfluidic patches for electrochemical sensing</p>
-                    </div>
-                    <div class="product-body">
-                        <p>Custom microfluidic patches designed specifically for research applications with PalmSens Sensit compatibility. Professional manufacturing with complete design consultation.</p>
-                        <ul class="product-features">
-                            <li>Full PalmSens Sensit integration</li>
-                            <li>Custom electrode configurations</li>
-                            <li>Biocompatible materials & adhesives</li>
-                            <li>Professional manufacturing process</li>
-                            <li>Research documentation included</li>
-                            <li>Flexible production volumes</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-header">
-                        <h3>Custom Lab-on-Chip Manufacturing</h3>
-                        <p>Precision-engineered microfluidic devices for research</p>
-                    </div>
-                    <div class="product-body">
-                        <p>Complete design-to-manufacturing service for custom lab-on-chip devices. From concept sketches to functional prototypes with validation testing.</p>
-                        <ul class="product-features">
-                            <li>End-to-end design consultation</li>
-                            <li>Multi-material fabrication capabilities</li>
-                            <li>Integrated sensor compatibility</li>
-                            <li>Microfluidic flow validation</li>
-                            <li>Research protocol development</li>
-                            <li>Technical documentation package</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-header">
-                        <h3>Organ-on-Chip Platforms</h3>
-                        <p>Advanced tissue culture and drug testing devices</p>
-                    </div>
-                    <div class="product-body">
-                        <p>Professional organ-on-chip device manufacturing service with custom chamber designs optimized for your specific tissue culture requirements.</p>
-                        <ul class="product-features">
-                            <li>Application-specific chamber geometry</li>
-                            <li>Perfusion system integration</li>
-                            <li>Real-time monitoring compatibility</li>
-                            <li>Sterile packaging & handling</li>
-                            <li>Protocol optimization support</li>
-                            <li>Ongoing technical consultation</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="how-it-works" style="background: var(--bg-light); padding: 4rem 2rem;">
-        <div class="container">
-            <h2>Our Custom Design Process</h2>
-            <p class="section-intro">From concept to functional device in 4 simple steps</p>
-            
-            <div class="process-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <div class="process-step" style="background: white; padding: 2rem; border-radius: 0.5rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                    <div class="step-number" style="width: 60px; height: 60px; background: var(--accent-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; font-family: var(--heading-font);">1</div>
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-family: var(--heading-font); font-weight: 600; letter-spacing: -0.01em;">Consultation</h3>
-                    <p style="color: var(--text-light);">Share your research requirements, target applications, and technical specifications with our design team.</p>
-                </div>
-                
-                <div class="process-step" style="background: white; padding: 2rem; border-radius: 0.5rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                    <div class="step-number" style="width: 60px; height: 60px; background: var(--accent-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; font-family: var(--heading-font);">2</div>
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-family: var(--heading-font); font-weight: 600; letter-spacing: -0.01em;">Design & Prototyping</h3>
-                    <p style="color: var(--text-light);">Our engineers create custom designs optimized for your application, including CAD files and flow simulations.</p>
-                </div>
-                
-                <div class="process-step" style="background: white; padding: 2rem; border-radius: 0.5rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                    <div class="step-number" style="width: 60px; height: 60px; background: var(--accent-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; font-family: var(--heading-font);">3</div>
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-family: var(--heading-font); font-weight: 600; letter-spacing: -0.01em;">Manufacturing</h3>
-                    <p style="color: var(--text-light);">Precision manufacturing using our patent-pending processes with quality validation and testing.</p>
-                </div>
-                
-                <div class="process-step" style="background: white; padding: 2rem; border-radius: 0.5rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                    <div class="step-number" style="width: 60px; height: 60px; background: var(--accent-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; font-family: var(--heading-font);">4</div>
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-family: var(--heading-font); font-weight: 600; letter-spacing: -0.01em;">Delivery & Support</h3>
-                    <p style="color: var(--text-light);">Receive your custom devices with complete documentation, protocols, and ongoing technical support.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service Information Section - NEW FOR USPTO -->
-    <section class="service-info" style="background: var(--bg-light); padding: 3rem 2rem;">
-        <div class="container">
-            <h2>KHEMI/ON Service Information</h2>
-            <p class="section-intro">KHEMI/ON provides custom microfluidic design and manufacturing services on a project basis to research institutions and biotech companies nationwide.</p>
-            
-            <div style="background: white; padding: 2rem; border-radius: 0.5rem; margin-top: 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; font-family: var(--heading-font); font-weight: 600; letter-spacing: -0.01em;">How KHEMI/ON Works</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); color: var(--text-dark);">✓ Free initial consultation</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); color: var(--text-dark);">✓ Custom quote based on specifications</li>
-                    </ul>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); color: var(--text-dark);">✓ Project-based service agreements</li>
-                        <li style="padding: 0.75rem 0; color: var(--text-dark);">✓ Nationwide service delivery</li>
-                    </ul>
-                </div>
-                
-                <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 0.5rem; margin-top: 1.5rem;">
-                    <h4 style="color: var(--secondary-color); margin-bottom: 1rem; font-family: var(--heading-font); font-weight: 600;">Service Capabilities</h4>
-                    <p style="color: var(--text-light); margin-bottom: 1rem;">KHEMI/ON specializes in custom microfluidic device design and manufacturing, offering end-to-end solutions from initial concept through final delivery.</p>
-                    <p style="color: var(--text-light); margin: 0;"><strong>Service Areas:</strong> Custom patch design, lab-on-chip manufacturing, organ-on-chip platforms, PalmSens Sensit integration, rapid prototyping, and comprehensive technical documentation.</p>
+                    <h3>Quality Assurance</h3>
+                    <p>Comprehensive quality control with validation testing, sterile packaging, complete documentation, and ongoing technical support for all manufactured devices.</p>
                 </div>
             </div>
         </div>
@@ -945,7 +1113,7 @@
     <section class="technology" id="technology">
         <div class="container">
             <h2>Technology Platform</h2>
-            <p class="section-intro">Leveraging patent-pending manufacturing technologies to deliver innovative solutions for the most demanding research challenges.</p>
+            <p class="section-intro">Leveraging patent-pending manufacturing technologies to deliver innovative solutions for scientific research and medical applications.</p>
             
             <div class="tech-highlight">
                 <h3>Proprietary Manufacturing Process</h3>
@@ -960,42 +1128,70 @@
             </div>
             
             <div class="tech-highlight" style="margin-top: 1.5rem;">
-                <h3>Customization & Flexibility</h3>
-                <p>Our team's expertise extends beyond our listed capabilities. We specialize in developing custom solutions for unique research challenges, working closely with clients to transform concepts into functional devices. Whether you need modifications to existing designs or entirely new device architectures, we're equipped to deliver solutions that meet your specific requirements.</p>
+                <h3>Product Development Services</h3>
+                <p>Our team's expertise extends beyond our manufactured products to provide comprehensive product development and engineering services for others. We specialize in developing custom solutions for unique research challenges, working closely with clients to transform concepts into functional devices through professional engineering consultation and iterative development processes.</p>
             </div>
         </div>
     </section>
 
     <!-- Applications Section -->
-    <section class="applications" id="applications">
+    <section class="applications" style="background: var(--bg-light); padding: 4rem 2rem;" id="applications">
         <div class="container">
             <h2>Research Applications</h2>
-            <p class="section-intro">Supporting breakthrough research across multiple domains</p>
+            <p class="section-intro">Supporting breakthrough research across multiple domains with manufactured devices and custom engineering services</p>
             
             <div class="applications-list">
                 <div class="application-item">
-                    <h4>Wearable Biosensors</h4>
-                    <p>Continuous monitoring platforms for real-time biomarker detection</p>
+                    <h4>Cell Culture Research</h4>
+                    <p>Bioreactors for advanced cell culturing and tissue engineering studies</p>
+                </div>
+                <div class="application-item">
+                    <h4>Medical Diagnostics</h4>
+                    <p>Electrochemical sensors for clinical fluid analysis and biomarker detection</p>
                 </div>
                 <div class="application-item">
                     <h4>Drug Discovery</h4>
-                    <p>High-throughput screening and pharmacokinetic studies</p>
+                    <p>High-throughput screening platforms and pharmacokinetic studies</p>
                 </div>
                 <div class="application-item">
-                    <h4>Point-of-Care Diagnostics</h4>
-                    <p>Rapid, sensitive detection systems for clinical applications</p>
+                    <h4>Biosensor Development</h4>
+                    <p>Microneedle arrays and sensor integration for wearable health monitoring</p>
                 </div>
                 <div class="application-item">
-                    <h4>Cell Culture & Analysis</h4>
-                    <p>Advanced platforms for cellular studies and tissue engineering</p>
+                    <h4>Point-of-Care Testing</h4>
+                    <p>Rapid diagnostic devices for clinical and field applications</p>
                 </div>
                 <div class="application-item">
-                    <h4>Environmental Monitoring</h4>
-                    <p>Microfluidic sensors for water quality and environmental analysis</p>
+                    <h4>Research Instrumentation</h4>
+                    <p>Custom scientific instruments and laboratory automation systems</p>
                 </div>
-                <div class="application-item">
-                    <h4>Personalized Medicine</h4>
-                    <p>Custom devices for patient-specific therapeutic applications</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Information Section -->
+    <section class="service-info" style="padding: 3rem 2rem;">
+        <div class="container">
+            <h2>KHEMI/ON Service Information</h2>
+            <p class="section-intro">KHEMI/ON provides manufactured microfluidic devices and product development engineering services nationwide to research institutions and biotech companies.</p>
+            
+            <div style="background: var(--bg-light); padding: 2rem; border-radius: 0.5rem; margin-top: 2rem;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; font-family: var(--heading-font); font-weight: 600; letter-spacing: -0.01em;">How KHEMI/ON Works</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); color: var(--text-dark);">✓ Product quotes and specifications</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); color: var(--text-dark);">✓ Custom engineering consultation</li>
+                    </ul>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); color: var(--text-dark);">✓ Manufacturing and delivery</li>
+                        <li style="padding: 0.75rem 0; color: var(--text-dark);">✓ Nationwide business operations</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; margin-top: 1.5rem;">
+                    <h4 style="color: var(--secondary-color); margin-bottom: 1rem; font-family: var(--heading-font); font-weight: 600;">Business Operations</h4>
+                    <p style="color: var(--text-light); margin-bottom: 1rem;"><strong>Product Sales:</strong> KHEMI/ON bioreactors for cell culturing research and electrochemical sensors for medical applications.</p>
+                    <p style="color: var(--text-light); margin: 0;"><strong>Engineering Services:</strong> Product development and engineering services for others, including custom device design, prototyping, and manufacturing consultation.</p>
                 </div>
             </div>
         </div>
@@ -1004,13 +1200,13 @@
     <!-- CTA Section -->
     <section class="cta-section" id="contact">
         <div class="container">
-            <h2>Ready to Design Your Custom Microfluidic Solution?</h2>
-            <p>Start your project with a free consultation. Our team will work with you to design and manufacture the perfect device for your research needs.</p>
+            <h2>Ready to Order KHEMI/ON Products?</h2>
+            <p>Contact our team for product quotes, custom engineering services, and technical specifications. Professional manufacturing and engineering consultation available nationwide.</p>
             <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
-                <button onclick="openConsultationModal()" class="btn-primary" style="font-size: 1.125rem; padding: 1rem 2.5rem;">Request Free Consultation</button>
-                <button onclick="openConsultationModal()" class="btn-secondary" style="color: white; border-color: white; font-size: 1.125rem; padding: 1rem 2.5rem;">Get Technical Specs</button>
+                <button onclick="openConsultationModal()" class="btn-primary" style="font-size: 1.125rem; padding: 1rem 2.5rem;">Get Product Quote</button>
+                <button onclick="openConsultationModal()" class="btn-secondary" style="color: white; border-color: white; font-size: 1.125rem; padding: 1rem 2.5rem;">Engineering Services</button>
             </div>
-            <p style="margin-top: 1.5rem; opacity: 0.9; font-size: 0.95rem;">✓ Professional manufacturing process &nbsp;&nbsp; ✓ PalmSens Sensit compatibility &nbsp;&nbsp; ✓ Full design documentation</p>
+            <p style="margin-top: 1.5rem; opacity: 0.9; font-size: 0.95rem;">✓ Manufactured Products Available &nbsp;&nbsp; ✓ Custom Engineering Services &nbsp;&nbsp; ✓ Nationwide Delivery</p>
         </div>
     </section>
 
@@ -1019,44 +1215,44 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>KHEMI/ON</h3>
-                <p>Professional microfluidic device design and manufacturing services for research institutions and biotech companies. Member of the AFRL Regional Network – Midwest Hub.</p>
-                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">✓ PalmSens Sensit Compatible<br>✓ AFRL Partnership<br>✓ Complete Documentation</p>
+                <p>Professional microfluidic device manufacturing and engineering services for research institutions and biotech companies. Member of the AFRL Regional Network – Midwest Hub.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">✓ Manufactured Products<br>✓ Engineering Services<br>✓ Nationwide Operations</p>
                 
                 <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
                     <h4 style="font-size: 1rem; margin-bottom: 0.5rem; opacity: 0.9;">Business Contact</h4>
                     <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.6;">
                         KhemI/On<br>
-                        Email: <a href="#" onclick="openConsultationModal(); return false;" style="color: white; text-decoration: underline;">Request Consultation</a><br>
-                        Business inquiries welcome
+                        Product Orders & Engineering Services<br>
+                        <a href="#" onclick="openConsultationModal(); return false;" style="color: white; text-decoration: underline;">Request Quote</a>
                     </p>
                 </div>
             </div>
             
             <div class="footer-section">
-                <h3>Design Services</h3>
+                <h3>Products</h3>
                 <ul>
-                    <li><a href="#products">Custom Patch Design</a></li>
-                    <li><a href="#products">Lab-on-Chip Manufacturing</a></li>
-                    <li><a href="#products">Organ-on-Chip Platforms</a></li>
-                    <li><a href="#capabilities">Advanced Prototyping</a></li>
+                    <li><a href="#products">Bioreactors for Cell Culturing</a></li>
+                    <li><a href="#products">Electrochemical Sensors</a></li>
+                    <li><a href="#products">Microneedle Arrays</a></li>
+                    <li><a href="#custom-design">Custom Engineering</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
-                <h3>Company</h3>
+                <h3>Services</h3>
                 <ul>
-                    <li><a href="#technology">Manufacturing Process</a></li>
-                    <li><a href="#applications">Research Applications</a></li>
-                    <li><a href="#capabilities">Our Services</a></li>
-                    <li><a href="#" onclick="openConsultationModal(); return false;">Free Consultation</a></li>
+                    <li><a href="#custom-design">Product Development</a></li>
+                    <li><a href="#custom-design">Engineering Services</a></li>
+                    <li><a href="#capabilities">Manufacturing</a></li>
+                    <li><a href="#technology">Technical Consultation</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h3>Get Started</h3>
-                <p>Ready to discuss your custom microfluidic device needs?</p>
-                <button onclick="openConsultationModal()" style="background: transparent; border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 0.25rem; cursor: pointer; margin-top: 0.5rem; font-weight: 600; transition: background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Schedule Consultation</button>
-                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">Free consultation • Technical specs provided • Research-focused solutions</p>
+                <p>Ready to order KHEMI/ON products or discuss engineering services?</p>
+                <button onclick="openConsultationModal()" style="background: transparent; border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 0.25rem; cursor: pointer; margin-top: 0.5rem; font-weight: 600; transition: background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Request Quote</button>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">Product quotes • Engineering consultation • Nationwide delivery</p>
             </div>
         </div>
         
@@ -1070,14 +1266,14 @@
     <div class="modal-overlay" id="consultationModal" onclick="closeModalOnOverlay(event)">
         <div class="modal-container">
             <div class="modal-header">
-                <h2>Request Free Consultation</h2>
-                <p>Let's discuss your research needs and find the perfect solution</p>
+                <h2>Request Product Quote</h2>
+                <p>Get pricing and specifications for KHEMI/ON products or engineering services</p>
                 <button class="close-btn" onclick="closeConsultationModal()">&times;</button>
             </div>
 
             <div class="modal-content">
-                <form name="consultation-request" method="POST" netlify id="consultationForm">
-                    <input type="hidden" name="form-name" value="consultation-request">
+                <form name="product-quote-request" method="POST" netlify id="consultationForm">
+                    <input type="hidden" name="form-name" value="product-quote-request">
                     
                     <div class="form-row">
                         <div class="form-group">
@@ -1104,58 +1300,56 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="research-area">Primary Research Interest <span class="required">*</span></label>
-                        <select id="research-area" name="research-area" required>
-                            <option value="">Select your area of interest</option>
-                            <option value="microneedle-biosensors">Microneedle Biosensors</option>
-                            <option value="lab-on-chip">Lab-on-Chip Devices</option>
-                            <option value="organ-on-chip">Organ-on-Chip Platforms</option>
-                            <option value="wearable-sensors">Wearable Health Sensors</option>
-                            <option value="drug-delivery">Drug Delivery Systems</option>
-                            <option value="point-of-care">Point-of-Care Diagnostics</option>
-                            <option value="custom-microfluidics">Custom Microfluidics</option>
-                            <option value="other">Other/Multiple Areas</option>
+                        <label for="product-interest">Product Interest <span class="required">*</span></label>
+                        <select id="product-interest" name="product-interest" required>
+                            <option value="">Select product or service</option>
+                            <option value="bioreactors">KHEMI/ON Bioreactors for Cell Culturing</option>
+                            <option value="electrochemical-sensors">KHEMI/ON Electrochemical Sensors</option>
+                            <option value="microneedle-arrays">KHEMI/ON Microneedle Arrays</option>
+                            <option value="custom-design">Custom Engineering Services</option>
+                            <option value="product-development">Product Development Services</option>
+                            <option value="multiple">Multiple Products/Services</option>
                         </select>
                     </div>
                     
                     <div class="form-group">
-                        <label>Services of Interest (check all that apply):</label>
+                        <label>Request Type (check all that apply):</label>
                         <div class="checkbox-group">
                             <div class="checkbox-item">
-                                <input type="checkbox" id="device-design" name="services" value="device-design">
-                                <label for="device-design">Device Design</label>
+                                <input type="checkbox" id="product-quote" name="request-type" value="product-quote">
+                                <label for="product-quote">Product Quote</label>
                             </div>
                             <div class="checkbox-item">
-                                <input type="checkbox" id="prototyping" name="services" value="prototyping">
-                                <label for="prototyping">Rapid Prototyping</label>
+                                <input type="checkbox" id="technical-specs" name="request-type" value="technical-specs">
+                                <label for="technical-specs">Technical Specifications</label>
                             </div>
                             <div class="checkbox-item">
-                                <input type="checkbox" id="manufacturing" name="services" value="manufacturing">
-                                <label for="manufacturing">Manufacturing</label>
+                                <input type="checkbox" id="engineering-services" name="request-type" value="engineering-services">
+                                <label for="engineering-services">Engineering Services</label>
                             </div>
                             <div class="checkbox-item">
-                                <input type="checkbox" id="testing" name="services" value="testing">
-                                <label for="testing">Device Testing</label>
+                                <input type="checkbox" id="custom-development" name="request-type" value="custom-development">
+                                <label for="custom-development">Custom Development</label>
                             </div>
                             <div class="checkbox-item">
-                                <input type="checkbox" id="consulting" name="services" value="consulting">
-                                <label for="consulting">Technical Consulting</label>
+                                <input type="checkbox" id="bulk-order" name="request-type" value="bulk-order">
+                                <label for="bulk-order">Bulk/Volume Order</label>
                             </div>
                             <div class="checkbox-item">
-                                <input type="checkbox" id="collaboration" name="services" value="collaboration">
-                                <label for="collaboration">Research Partnership</label>
+                                <input type="checkbox" id="consultation" name="request-type" value="consultation">
+                                <label for="consultation">Technical Consultation</label>
                             </div>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="project-brief">Brief Project Description <span class="required">*</span></label>
-                        <textarea id="project-brief" name="project-brief" placeholder="Tell us about your research goals, current challenges, or specific needs..." required></textarea>
+                        <label for="project-details">Project Details <span class="required">*</span></label>
+                        <textarea id="project-details" name="project-details" placeholder="Describe your product requirements, quantities needed, timeline, or engineering service needs..." required></textarea>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="timeline">Preferred Timeline</label>
+                            <label for="timeline">Timeline</label>
                             <select id="timeline" name="timeline">
                                 <option value="">Select timeline</option>
                                 <option value="asap">ASAP</option>
@@ -1167,28 +1361,28 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="consultation-type">Consultation Preference</label>
-                            <select id="consultation-type" name="consultation-type">
+                            <label for="contact-preference">Contact Preference</label>
+                            <select id="contact-preference" name="contact-preference">
                                 <option value="">No preference</option>
-                                <option value="video-call">Video Call</option>
-                                <option value="phone-call">Phone Call</option>
+                                <option value="email">Email Quote</option>
+                                <option value="phone-call">Phone Discussion</option>
+                                <option value="video-call">Video Consultation</option>
                                 <option value="in-person">In-Person (if local)</option>
-                                <option value="email">Email Discussion</option>
                             </select>
                         </div>
                     </div>
                     
-                    <button type="submit" class="submit-btn">Schedule Free Consultation</button>
+                    <button type="submit" class="submit-btn">Request Quote</button>
                     
                     <p class="form-note">
-                        We'll contact you within 24 hours to schedule your free consultation.
+                        We'll provide product quotes and specifications within 24 hours.
                     </p>
                 </form>
 
                 <div class="success-message" id="successMessage">
                     <div class="success-icon">✓</div>
-                    <h3>Consultation Request Received!</h3>
-                    <p>Thank you for your interest. We'll contact you within 24 hours to schedule your free consultation.</p>
+                    <h3>Quote Request Received!</h3>
+                    <p>Thank you for your interest in KHEMI/ON products. We'll send you a detailed quote and specifications within 24 hours.</p>
                     <button class="submit-btn" onclick="closeConsultationModal()" style="margin-top: 1rem;">Close</button>
                 </div>
             </div>
@@ -1239,6 +1433,20 @@
             document.getElementById('consultationForm').style.display = 'none';
             document.getElementById('successMessage').classList.add('show');
         }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
