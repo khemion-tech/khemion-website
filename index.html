@@ -1199,7 +1199,7 @@
                 
                 <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; margin-top: 1.5rem;">
                     <h4 style="color: var(--secondary-color); margin-bottom: 1rem; font-family: var(--heading-font); font-weight: 600;">Business Operations</h4>
-                    <p style="color: var(--text-light); margin-bottom: 1rem;"><strong>Product Sales:</strong> KHEMI/ON bioreactors for cell culturing research and electrochemical sensors for medical applications.</p>
+                    <p style="color: var(--text-light); margin-bottom: 1rem;"><strong>Product Sales:</strong> KHEMI/ON bioreactors for cell culturing research and electrochemical sensors for biomedical research.</p>
                     <p style="color: var(--text-light); margin: 0;"><strong>Engineering Services:</strong> Product development and engineering services for others, including custom device design, prototyping, and manufacturing consultation.</p>
                 </div>
             </div>
@@ -1207,85 +1207,60 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-        <div class="container">
-            <h2>Ready to Order KHEMI/ON Products?</h2>
-            <p>Contact our team for product quotes, custom engineering services, and technical specifications. Professional manufacturing and engineering consultation available nationwide.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
-                <button onclick="openConsultationModal()" class="btn-primary" style="font-size: 1.125rem; padding: 1rem 2.5rem;">Get Product Quote</button>
-                <button onclick="openConsultationModal()" class="btn-secondary" style="color: white; border-color: white; font-size: 1.125rem; padding: 1rem 2.5rem;">Engineering Services</button>
-            </div>
-            <p style="margin-top: 1.5rem; opacity: 0.9; font-size: 0.95rem;">✓ Manufactured Products Available &nbsp;&nbsp; ✓ Custom Engineering Services &nbsp;&nbsp; ✓ Nationwide Delivery</p>
-        </div>
-    </section>
+            <div class="products-grid">
+                <div class="product-showcase">
+                    <div class="product-image product-image-1" style="display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <img src="Images/skin bioreactor.png" alt="Skin bioreactor" style="max-width: 48%; max-height: 180px; margin: 1rem; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <img src="Images/microfluidic device.jpg" alt="Microfluidic device" style="max-width: 48%; max-height: 180px; margin: 1rem; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Microfluidic Research Platforms</div>
+                        <h3>Lab-on-Chip, Organ-on-Chip, Bioreactors</h3>
+                        <p>Advanced microfluidic platforms for lab-on-chip, organ-on-chip, and bioreactor research. Customizable for cell culturing, tissue engineering, and integrated biosensing. Nanofiber membranes available for cell substrates, filtration, or immobilization matrices.</p>
+                        <div class="product-specs">
+                            <h4>Specifications</h4>
+                            <ul class="spec-list">
+                                <li>Multi-chamber and organ-on-chip designs</li>
+                                <li>Perfusion flow control</li>
+                                <li>Biocompatible materials</li>
+                                <li>Nanofiber membrane integration (cell substrates, filters, immobilization)</li>
+                                <li>Sensor and microneedle array integration</li>
+                                <li>Sterile packaging</li>
+                                <li>Custom configurations</li>
+                                <li>Research documentation</li>
+                            </ul>
+                        </div>
+                        <button onclick="openConsultationModal()" class="quote-btn">Request Product Quote</button>
+                    </div>
+                </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>KHEMI/ON</h3>
-                <p>Professional microfluidic device manufacturing and engineering services for research institutions and biotech companies. Member of the AFRL Regional Network – Midwest Hub.</p>
-                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">✓ Manufactured Products<br>✓ Engineering Services<br>✓ Nationwide Operations</p>
-                
-                <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
-                    <h4 style="font-size: 1rem; margin-bottom: 0.5rem; opacity: 0.9;">Business Contact</h4>
-                    <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.6;">
-                        KhemI/On<br>
-                        Product Orders & Engineering Services<br>
-                        <a href="#" onclick="openConsultationModal(); return false;" style="color: white; text-decoration: underline;">Request Quote</a>
-                    </p>
+                <div class="product-showcase">
+                    <div class="product-image product-image-2" style="display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); flex-wrap: wrap;">
+                        <img src="Images/microneedle_macro.jpg" alt="Microneedle patch macro" style="max-width: 45%; max-height: 180px; margin: 1rem; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <img src="Images/mn_patch_render.png" alt="Microneedle patch render" style="max-width: 45%; max-height: 180px; margin: 1rem; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <img src="Images/usb_mn_sensor.jpg" alt="USB microneedle sensor" style="max-width: 45%; max-height: 180px; margin: 1rem; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <img src="Images/isolated MN array.png" alt="Isolated microneedle array" style="max-width: 45%; max-height: 180px; margin: 1rem; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Microneedle Arrays</div>
+                        <h3>Wearable Electrochemical Biosensor Research</h3>
+                        <p>Microneedle array platforms for wearable and implantable electrochemical biosensor research. Customizable for analyte detection in biological fluids and tissues, with options for user functionalization and microfluidic integration.</p>
+                        <div class="product-specs">
+                            <h4>Specifications</h4>
+                            <ul class="spec-list">
+                                <li>Microneedle array with electrochemical sensor capability</li>
+                                <li>Wearable and implantable formats</li>
+                                <li>Analyte detection in fluids and tissues</li>
+                                <li>Microfluidic integration</li>
+                                <li>High sensitivity</li>
+                                <li>Medical-grade and biocompatible materials</li>
+                                <li>Custom functionalization available</li>
+                            </ul>
+                        </div>
+                        <button onclick="openConsultationModal()" class="quote-btn">Request Product Quote</button>
+                    </div>
                 </div>
             </div>
-            
-            <div class="footer-section">
-                <h3>Products</h3>
-                <ul>
-                    <li><a href="#products">Bioreactors for Cell Culturing</a></li>
-                    <li><a href="#products">Electrochemical Sensors</a></li>
-                    <li><a href="#products">Microneedle Arrays</a></li>
-                    <li><a href="#custom-design">Custom Engineering</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#custom-design">Product Development</a></li>
-                    <li><a href="#custom-design">Engineering Services</a></li>
-                    <li><a href="#capabilities">Manufacturing</a></li>
-                    <li><a href="#technology">Technical Consultation</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Get Started</h3>
-                <p>Ready to order KHEMI/ON products or discuss engineering services?</p>
-                <button onclick="openConsultationModal()" style="background: transparent; border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 0.25rem; cursor: pointer; margin-top: 0.5rem; font-weight: 600; transition: background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Request Quote</button>
-                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">Product quotes • Engineering consultation • Nationwide delivery</p>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2024 KhemI/On. All rights reserved. | Patent-Pending Technologies</p>
-            <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem;">KHEMI/ON is a trademark of KhemI/On</p>
-        </div>
-    </footer>
-
-    <!-- Consultation Modal -->
-    <div class="modal-overlay" id="consultationModal" onclick="closeModalOnOverlay(event)">
-        <div class="modal-container">
-            <div class="modal-header" style="text-align: center;">
-                <img src="logo.svg" alt="KhemI/On Logo" style="height: 48px; margin-bottom: 0.5rem; display: block; margin-left: auto; margin-right: auto;">
-                <div style="font-family: var(--logo-font); font-size: 1.5rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; margin-bottom: 0.5rem;">KhemI/On</div>
-                <h2 style="color: #fff;">Request Product Quote</h2>
-                <p>Get pricing and specifications for KHEMI/ON products or engineering services</p>
-                <button class="close-btn" onclick="closeConsultationModal()">&times;</button>
-            </div>
-
-            <div class="modal-content">
-                <form name="product-quote-request" method="POST" netlify id="consultationForm">
-                    <input type="hidden" name="form-name" value="product-quote-request">
-                    
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name <span class="required">*</span></label>
