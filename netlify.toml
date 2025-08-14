@@ -2,19 +2,41 @@
 [build]
   publish = "/"
 
+# Force HTTPS redirects
+[[redirects]]
+  from = "http://khemion.com/*"
+  to = "https://khemion.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.khemion.com/*"
+  to = "https://khemion.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.khemion.com/*"
+  to = "https://khemion.com/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
   force = false
 
+# Security headers for HTTPS
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "no-referrer-when-downgrade"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data:; connect-src 'self'"
 
 # Prerendering for better SEO
 [[plugins]]
