@@ -106,10 +106,15 @@
             text-decoration: none;
             font-weight: 600;
             transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: var(--heading-font);
+            font-size: 1rem;
         }
         
         .cta-button:hover {
             background: var(--secondary-color);
+            transform: translateY(-1px);
         }
         
         /* Hero Section */
@@ -160,6 +165,9 @@
             text-decoration: none;
             font-weight: 600;
             transition: transform 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
         
         .btn-primary:hover {
@@ -175,6 +183,8 @@
             text-decoration: none;
             font-weight: 600;
             transition: background 0.3s;
+            cursor: pointer;
+            font-size: 1rem;
         }
         
         .btn-secondary:hover {
@@ -437,6 +447,217 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             opacity: 0.8;
         }
+
+        /* Consultation Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .modal-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2rem 2rem 1.5rem;
+            border-radius: 16px 16px 0 0;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: white;
+            text-align: left;
+        }
+
+        .modal-header p {
+            margin: 0.5rem 0 0;
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            font-size: 1.5rem;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-content {
+            padding: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .modal-content label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .modal-content input, 
+        .modal-content select, 
+        .modal-content textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: border-color 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .modal-content input:focus, 
+        .modal-content select:focus, 
+        .modal-content textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+        }
+
+        .modal-content textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 16px rgba(49, 130, 206, 0.3);
+        }
+
+        .required {
+            color: #e53e3e;
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
         
         /* Mobile Responsive */
         @media (max-width: 768px) {
@@ -457,6 +678,32 @@
                 width: 100%;
                 text-align: center;
             }
+
+            .modal-container {
+                width: 95%;
+                margin: 1rem;
+            }
+            
+            .modal-header {
+                padding: 1.5rem;
+            }
+            
+            .modal-content {
+                padding: 1.5rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            
+            .modal-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -473,7 +720,7 @@
                 <li><a href="#products">Custom Design</a></li>
                 <li><a href="#technology">Technology</a></li>
                 <li><a href="#applications">Applications</a></li>
-                <li><a href="#contact" class="cta-button">Request Consultation</a></li>
+                <li><button onclick="openConsultationModal()" class="cta-button">Request Consultation</button></li>
             </ul>
         </nav>
     </header>
@@ -484,7 +731,7 @@
             <h1>Custom Microfluidic Patch Design & Manufacturing</h1>
             <p class="subtitle">Professional design and manufacturing services for research-grade Lab-on-Chip, Organ-on-Chip, and MicroNeedle devices. Compatible with PalmSens Sensit and other leading biosensor platforms.</p>
             <div class="hero-cta">
-                <a href="#contact" class="btn-primary">Request Custom Design</a>
+                <button onclick="openConsultationModal()" class="btn-primary">Request Custom Design</button>
                 <a href="#capabilities" class="btn-secondary">View Our Services</a>
             </div>
         </div>
@@ -700,8 +947,8 @@
             <h2>Ready to Design Your Custom Microfluidic Solution?</h2>
             <p>Start your project with a free consultation. Our team will work with you to design and manufacture the perfect device for your research needs.</p>
             <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
-                <a href="mailto:contact@khemion.com?subject=Custom Design Consultation Request" class="btn-primary" style="font-size: 1.125rem; padding: 1rem 2.5rem;">Request Free Consultation</a>
-                <a href="mailto:contact@khemion.com?subject=Technical Specifications Inquiry" class="btn-secondary" style="color: white; border-color: white; font-size: 1.125rem; padding: 1rem 2.5rem;">Get Technical Specs</a>
+                <button onclick="openConsultationModal()" class="btn-primary" style="font-size: 1.125rem; padding: 1rem 2.5rem;">Request Free Consultation</button>
+                <button onclick="openConsultationModal()" class="btn-secondary" style="color: white; border-color: white; font-size: 1.125rem; padding: 1rem 2.5rem;">Get Technical Specs</button>
             </div>
             <p style="margin-top: 1.5rem; opacity: 0.9; font-size: 0.95rem;">✓ Professional manufacturing process &nbsp;&nbsp; ✓ PalmSens Sensit compatibility &nbsp;&nbsp; ✓ Full design documentation</p>
         </div>
@@ -732,16 +979,14 @@
                     <li><a href="#technology">Manufacturing Process</a></li>
                     <li><a href="#applications">Research Applications</a></li>
                     <li><a href="#capabilities">Our Services</a></li>
-                    <li><a href="#contact">Free Consultation</a></li>
+                    <li><a href="#" onclick="openConsultationModal(); return false;">Free Consultation</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h3>Get Started</h3>
                 <p>Ready to discuss your custom microfluidic device needs?</p>
-                <p style="margin-top: 0.5rem;">
-                    <a href="mailto:contact@khemion.com?subject=Custom Design Consultation">contact@khemion.com</a>
-                </p>
+                <button onclick="openConsultationModal()" style="background: transparent; border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 0.25rem; cursor: pointer; margin-top: 0.5rem; font-weight: 600; transition: background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Schedule Consultation</button>
                 <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">Free consultation • Technical specs provided • Research-focused solutions</p>
             </div>
         </div>
@@ -750,5 +995,180 @@
             <p>&copy; 2024 KhemI/On. All rights reserved. | Patent-Pending Technologies</p>
         </div>
     </footer>
+
+    <!-- Consultation Modal -->
+    <div class="modal-overlay" id="consultationModal" onclick="closeModalOnOverlay(event)">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Request Free Consultation</h2>
+                <p>Let's discuss your research needs and find the perfect solution</p>
+                <button class="close-btn" onclick="closeConsultationModal()">&times;</button>
+            </div>
+
+            <div class="modal-content">
+                <form name="consultation-request" method="POST" netlify id="consultationForm">
+                    <input type="hidden" name="form-name" value="consultation-request">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="institution">Institution/Company <span class="required">*</span></label>
+                            <input type="text" id="institution" name="institution" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone (optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="research-area">Primary Research Interest <span class="required">*</span></label>
+                        <select id="research-area" name="research-area" required>
+                            <option value="">Select your area of interest</option>
+                            <option value="microneedle-biosensors">Microneedle Biosensors</option>
+                            <option value="lab-on-chip">Lab-on-Chip Devices</option>
+                            <option value="organ-on-chip">Organ-on-Chip Platforms</option>
+                            <option value="wearable-sensors">Wearable Health Sensors</option>
+                            <option value="drug-delivery">Drug Delivery Systems</option>
+                            <option value="point-of-care">Point-of-Care Diagnostics</option>
+                            <option value="custom-microfluidics">Custom Microfluidics</option>
+                            <option value="other">Other/Multiple Areas</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Services of Interest (check all that apply):</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="device-design" name="services" value="device-design">
+                                <label for="device-design">Device Design</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="prototyping" name="services" value="prototyping">
+                                <label for="prototyping">Rapid Prototyping</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="manufacturing" name="services" value="manufacturing">
+                                <label for="manufacturing">Manufacturing</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="testing" name="services" value="testing">
+                                <label for="testing">Device Testing</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="consulting" name="services" value="consulting">
+                                <label for="consulting">Technical Consulting</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="collaboration" name="services" value="collaboration">
+                                <label for="collaboration">Research Partnership</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="project-brief">Brief Project Description <span class="required">*</span></label>
+                        <textarea id="project-brief" name="project-brief" placeholder="Tell us about your research goals, current challenges, or specific needs..." required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="timeline">Preferred Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Select timeline</option>
+                                <option value="asap">ASAP</option>
+                                <option value="1-month">Within 1 month</option>
+                                <option value="3-months">1-3 months</option>
+                                <option value="6-months">3-6 months</option>
+                                <option value="planning">Still planning</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="consultation-type">Consultation Preference</label>
+                            <select id="consultation-type" name="consultation-type">
+                                <option value="">No preference</option>
+                                <option value="video-call">Video Call</option>
+                                <option value="phone-call">Phone Call</option>
+                                <option value="in-person">In-Person (if local)</option>
+                                <option value="email">Email Discussion</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Schedule Free Consultation</button>
+                    
+                    <p class="form-note">
+                        We'll contact you within 24 hours to schedule your free consultation.
+                    </p>
+                </form>
+
+                <div class="success-message" id="successMessage">
+                    <div class="success-icon">✓</div>
+                    <h3>Consultation Request Received!</h3>
+                    <p>Thank you for your interest. We'll contact you within 24 hours to schedule your free consultation.</p>
+                    <button class="submit-btn" onclick="closeConsultationModal()" style="margin-top: 1rem;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal Functions
+        function openConsultationModal() {
+            const modal = document.getElementById('consultationModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeConsultationModal() {
+            const modal = document.getElementById('consultationModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            setTimeout(() => {
+                document.getElementById('consultationForm').style.display = 'block';
+                document.getElementById('successMessage').classList.remove('show');
+                document.getElementById('consultationForm').reset();
+            }, 300);
+        }
+
+        function closeModalOnOverlay(event) {
+            if (event.target === event.currentTarget) {
+                closeConsultationModal();
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeConsultationModal();
+            }
+        });
+
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            setTimeout(() => {
+                document.getElementById('consultationForm').style.display = 'none';
+                document.getElementById('successMessage').classList.add('show');
+            }, 100);
+        });
+
+        if (window.location.search.includes('success=true')) {
+            openConsultationModal();
+            document.getElementById('consultationForm').style.display = 'none';
+            document.getElementById('successMessage').classList.add('show');
+        }
+    </script>
 </body>
 </html>
