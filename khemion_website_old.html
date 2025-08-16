@@ -63,14 +63,6 @@
             text-decoration: none;
             font-family: var(--logo-font);
             letter-spacing: -0.02em;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .nav-brand img {
-            height: 48px;
-            width: auto;
         }
         
         .nav-links {
@@ -99,7 +91,7 @@
             border-radius: 0.25rem;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: background 0.3s;
             border: none;
             cursor: pointer;
             font-family: var(--heading-font);
@@ -111,66 +103,38 @@
             transform: translateY(-1px);
         }
         
-        /* Hero Section - Optimized for USPTO Screenshot */
+        /* Hero Section */
         .hero {
             margin-top: 80px;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
         }
         
         .hero-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
+            grid-template-columns: auto 1fr;
+            gap: 4rem;
             align-items: center;
-            width: 100%;
-        }
-        
-        .hero-branding {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
         }
         
         .hero-logo {
-            width: 200px;
-            height: 200px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.2);
-            padding: 1rem;
         }
         
-        .hero-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: brightness(0) invert(1);
+        .hero-logo-img {
+            height: 180px;
+            width: auto;
+            filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+            transition: transform 0.3s ease;
         }
         
-        .company-name {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            font-family: var(--logo-font);
-        }
-        
-        .company-tagline {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
+        .hero-logo-img:hover {
+            transform: scale(1.05);
         }
         
         .hero-content {
@@ -179,17 +143,16 @@
         
         .hero h1 {
             font-family: var(--heading-font);
-            font-size: 2.5rem;
+            font-size: 2.75rem;
             margin-bottom: 1.5rem;
             font-weight: 800;
             letter-spacing: -0.025em;
         }
         
         .hero .subtitle {
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             margin-bottom: 2rem;
             opacity: 0.95;
-            line-height: 1.7;
         }
         
         .hero-cta {
@@ -198,89 +161,64 @@
             margin-top: 1rem;
         }
         
-        .btn-primary, .btn-secondary {
+        .btn-primary, .btn-secondary, .cta-button, .quote-btn {
             font-family: var(--heading-font);
             font-weight: 600;
             letter-spacing: -0.01em;
-            padding: 0.75rem 2rem;
-            border-radius: 0.25rem;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 1rem;
         }
         
         .btn-primary {
             background: white;
             color: var(--primary-color);
+            padding: 0.75rem 2rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
             border: none;
             cursor: pointer;
+            font-size: 1rem;
         }
         
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         }
         
         .btn-secondary {
             background: transparent;
             color: white;
+            padding: 0.75rem 2rem;
             border: 2px solid white;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
             cursor: pointer;
+            font-size: 1rem;
         }
         
         .btn-secondary:hover {
             background: rgba(255,255,255,0.1);
         }
 
-        /* Product Showcase in Hero */
-        .product-showcase-hero {
-            background: rgba(255,255,255,0.1);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            margin-top: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .product-grid-hero {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .product-image-hero {
-            height: 160px;
-            border-radius: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.2);
-        }
-
-        .product-image-hero img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0.5rem;
-        }
-
-        .product-label {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(26, 54, 93, 0.9);
+        .quote-btn {
+            background: var(--accent-color);
             color: white;
-            padding: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
             font-weight: 600;
-            font-size: 0.85rem;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            width: 100%;
             text-align: center;
-            backdrop-filter: blur(10px);
+        }
+
+        .quote-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-1px);
         }
         
         /* Section Styles */
@@ -318,7 +256,7 @@
         /* Products Grid */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
@@ -338,17 +276,22 @@
         
         .product-image {
             height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: rgba(255,255,255,0.1);
+            border-radius: 0.5rem;
+            backdrop-filter: blur(10px);
         }
         
         .product-image-1 {
@@ -422,27 +365,6 @@
             color: var(--accent-color);
             margin-right: 0.5rem;
             font-weight: bold;
-        }
-
-        .quote-btn {
-            background: var(--accent-color);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.25rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-            width: 100%;
-            text-align: center;
-            font-family: var(--heading-font);
-        }
-
-        .quote-btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-1px);
         }
         
         /* Capabilities Grid */
@@ -899,22 +821,12 @@
                 text-align: center;
             }
             
-            .hero-branding {
-                order: 1;
-            }
-            
             .hero-content {
                 text-align: center;
-                order: 2;
             }
             
-            .hero-logo {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .hero-logo img {
-                filter: brightness(0) invert(1);
+            .hero-logo-img {
+                height: 120px;
             }
             
             .hero h1 {
@@ -937,11 +849,6 @@
 
             .spec-list {
                 grid-template-columns: 1fr;
-            }
-
-            .product-grid-hero {
-                grid-template-columns: 1fr;
-                gap: 1rem;
             }
 
             .modal-container {
@@ -976,10 +883,7 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="nav-brand">
-                <img src="logo.svg" alt="KhemI/On Logo">
-                KhemI/On
-            </a>
+            <a href="#" class="nav-brand">KhemI/On</a>
             <ul class="nav-links">
                 <li><a href="#products">Products</a></li>
                 <li><a href="#custom-design">Custom Design</a></li>
@@ -990,71 +894,79 @@
         </nav>
     </header>
 
-    <!-- Hero Section - USPTO Optimized Layout -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <div class="hero-branding">
-                <div class="hero-logo">
-                    <img src="logo.svg" alt="KhemI/On Logo">
-                </div>
-                <div class="company-name">KhemI/On</div>
-                <div class="company-tagline">Microfluidic Research Solutions</div>
-                <button onclick="openConsultationModal()" class="btn-primary">Request Product Quote</button>
+            <div class="hero-logo">
+                <img src="logo.svg" alt="KhemI/On Logo" class="hero-logo-img">
             </div>
-            
             <div class="hero-content">
                 <h1>KHEMI/ON Microfluidic Devices</h1>
                 <p class="subtitle">Professional bioreactors for cell culturing research and electrochemical sensors for medical diagnostics. KHEMI/ON serves research institutions and biotech companies nationwide with manufactured devices and custom design services.</p>
-                
-                <div class="product-showcase-hero">
-                    <div class="product-grid-hero">
-                        <div class="product-image-hero">
-                            <img src="Images/microfluidic device.jpg" alt="Microfluidic Bioreactor 3D Render" style="width: 100%; height: 100%; object-fit: cover;">
-                            <div class="product-label">Microfluidic Bioreactors</div>
-                        </div>
-                        <div class="product-image-hero">
-                            <img src="Images/microneedle closeup.jpg" alt="Conductive Microneedle Array" style="width: 100%; height: 100%; object-fit: cover;">
-                            <div class="product-label">Conductive Microneedle Patches</div>
-                        </div>
-                        <div class="product-image-hero">
-                            <img src="Images/isolated MN array.png" alt="Custom Design Services" style="width: 100%; height: 100%; object-fit: cover;">
-                            <div class="product-label">Custom Design Services</div>
-                        </div>
-                    </div>
-                    <div style="text-align: center;">
-                        <button onclick="openConsultationModal()" class="btn-secondary">Get Technical Consultation</button>
-                    </div>
+                <div class="hero-cta">
+                    <a href="#products" class="btn-primary">View Products</a>
+                    <button onclick="openConsultationModal()" class="btn-secondary">Request Quote</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
+    <!-- Products Section - NEW FOR USPTO GOODS -->
     <section class="products" id="products">
         <div class="container">
             <h2>KHEMI/ON Products</h2>
-            <p class="section-intro">Manufactured microfluidic devices and conductive microneedle patches available for order. Professional bioreactors for cell culturing research and microneedle patches for wearable electrochemical biosensing research applications.</p>
+            <p class="section-intro">Manufactured microfluidic devices available for order. Professional bioreactors and electrochemical sensors for scientific research and medical applications.</p>
             
             <div class="products-grid">
                 <div class="product-showcase">
-                    <div class="product-image product-image-1">
-                        <img src="Images/microfluidic device.jpg" alt="3D Render of Microfluidic Device" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
+                    <div class="product-image product-image-1"></div>
                     <div class="product-info">
                         <div class="product-category">Class 009 - Scientific Instruments</div>
                         <h3>Microfluidic Lab-on-Chip and Organ-on-Chip Bioreactor</h3>
-                        <p>Advanced microfluidic bioreactor platforms for cell culturing, organ-on-chip, and biosensing research. Our bioreactors integrate microneedle arrays that function as electrochemical sensors, or can be user-functionalized for custom electrochemical sensing applications.</p>
+                        <p>Advanced microfluidic bioreactor platforms for cell culturing, organ-on-chip, and biosensing research. Our bioreactors integrate microneedle arrays that function as electrochemical sensors, or can be user-functionalized for custom electrochemical sensing applications. Nanofiber membranes can be incorporated for cell substrates, filtration, or as immobilization matrices.</p>
                         <div class="product-specs">
                             <h4>Specifications</h4>
                             <ul class="spec-list">
                                 <li>Multi-chamber and organ-on-chip designs</li>
                                 <li>Perfusion flow control</li>
                                 <li>Biocompatible materials</li>
-                                <li>Nanofiber membrane integration</li>
-                                <li>Microneedle array integration</li>
-                                <li>Electrochemical sensor capability</li>
+                                <li>Nanofiber membrane integration (cell substrates, filters, immobilization)</li>
+                                <li>Microneedle array with electrochemical sensor capability</li>
                                 <li>Sterile packaging</li>
                                 <li>Custom configurations</li>
+                                <li>Research documentation</li>
+                            </ul>
+                        </div>
+                        <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; margin: 1.5rem 0; flex-wrap: wrap;">
+                            <img src="Images/microfluidic device.jpg" alt="Microfluidic device" style="max-width: 220px; width: 100%; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                            <img src="Images/isolated MN array.png" alt="Microneedle array" style="max-width: 220px; width: 100%; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                            <img src="Images/microneedle_macro.jpg" alt="Microneedle patch macro" style="max-width: 220px; width: 100%; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                            <img src="Images/mn_patch_render.png" alt="Microneedle patch render" style="max-width: 220px; width: 100%; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        </div>
+                        <button onclick="openConsultationModal()" class="quote-btn">Request Product Quote</button>
+                    </div>
+                </div>
+
+                <div class="product-showcase">
+                    <div class="product-image product-image-2"></div>
+                    <div class="product-info">
+                        <div class="product-category">Class 010 - Medical Devices</div>
+                        <h3>KHEMI/ON Microneedle Array Electrochemical Sensors</h3>
+                        <p>Microneedle arrays serve as advanced electrochemical sensors, or can be user-functionalized for custom sensing applications. These platforms enable direct integration with microfluidic bioreactors for real-time analyte detection in biological and medical research.</p>
+                        <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; margin: 1.5rem 0; flex-wrap: wrap;">
+                            <img src="Images/microneedle_macro.jpg" alt="Microneedle patch macro" style="max-width: 220px; width: 100%; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                            <img src="Images/mn_patch_render.png" alt="Microneedle patch render" style="max-width: 220px; width: 100%; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                            <img src="Images/usb_mn_sensor.jpg" alt="USB microneedle sensor" style="max-width: 220px; width: 100%; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        </div>
+                        <div class="product-specs">
+                            <h4>Specifications</h4>
+                            <ul class="spec-list">
+                                <li>Microneedle array with electrochemical sensor capability</li>
+                                <li>Analyte detection in fluids and tissues</li>
+                                <li>Microfluidic integration</li>
+                                <li>High sensitivity</li>
+                                <li>Medical-grade and biocompatible materials</li>
+                                <li>Custom functionalization available</li>
                             </ul>
                         </div>
                         <button onclick="openConsultationModal()" class="quote-btn">Request Product Quote</button>
@@ -1062,26 +974,24 @@
                 </div>
 
                 <div class="product-showcase">
-                    <div class="product-image product-image-2">
-                        <img src="Images/microneedle closeup.jpg" alt="Conductive Microneedle Array" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
+                    <div class="product-image product-image-3"></div>
                     <div class="product-info">
-                        <div class="product-category">Class 009 & 010 - Scientific Instruments & Medical Devices</div>
-                        <h3>Conductive Microneedle Patches for Wearable Electrochemical Biosensing Research</h3>
-                        <p><strong>For Research Use Only - Not FDA Approved for Human Use.</strong> Conductive microneedle arrays designed for wearable electrochemical biosensing research in biomedical device development. These platforms are intended for functionalization with user's own biorecognition elements, or we can work to identify and functionalize with BREs for a customer's target biomarker.</p>
+                        <div class="product-category">Research Platforms</div>
+                        <h3>KHEMI/ON Microneedle Arrays</h3>
+                        <p>Advanced microneedle array platforms for biosensor applications. Custom configurations with 100-2500 needles/cm² and heights from 200-1500 μm for diverse research needs.</p>
+                        
                         <div class="product-specs">
                             <h4>Specifications</h4>
                             <ul class="spec-list">
                                 <li>100-2500 needles/cm²</li>
                                 <li>200-1500 μm height</li>
-                                <li>Conductive materials for electrochemical sensing</li>
-                                <li>Biocompatible substrate materials</li>
-                                <li>User functionalization ready</li>
-                                <li>Custom biorecognition element integration</li>
-                                <li>Wearable biosensor research applications</li>
-                                <li>Research-grade manufacturing quality</li>
+                                <li>Sensor integration</li>
+                                <li>PalmSens compatible</li>
+                                <li>Optical transparency</li>
+                                <li>Custom geometries</li>
                             </ul>
                         </div>
+                        
                         <button onclick="openConsultationModal()" class="quote-btn">Request Product Quote</button>
                     </div>
                 </div>
@@ -1089,7 +999,7 @@
 
             <div style="background: var(--bg-light); padding: 2rem; border-radius: 0.5rem; margin-top: 3rem; text-align: center;">
                 <h3 style="color: var(--primary-color); margin-bottom: 1rem;">How to Order KHEMI/ON Products</h3>
-                <p style="color: var(--text-light); margin-bottom: 1.5rem;">All KHEMI/ON devices are manufactured to order with custom specifications. Our conductive microneedle patches are for research use only in wearable biosensor development. Contact our team for product quotes, technical specifications, and delivery timelines.</p>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem;">All KHEMI/ON devices are manufactured to order with custom specifications. Contact our team for product quotes, technical specifications, and delivery timelines.</p>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <button onclick="openConsultationModal()" class="cta-button" style="padding: 0.75rem 2rem;">Get Product Quote</button>
                     <button onclick="openConsultationModal()" class="btn-secondary" style="background: transparent; color: var(--primary-color); border-color: var(--primary-color); padding: 0.75rem 2rem;">Technical Consultation</button>
@@ -1222,13 +1132,13 @@
             
             <div class="tech-highlight" style="margin-top: 1.5rem;">
                 <h3>Partnered Innovation</h3>
-                <p>KhemI/On is a proud member of the <a href="https://midwesthub.afresearchlab.com/partnerships/" target="_blank" style="color: var(--accent-color); text-decoration: none;">AFRL Regional Network – Midwest Hub</a>, connecting our research and development capabilities with leading academic institutions, industry partners, and government agencies.</p>
+                <p>KhemI/On is a proud member of the <a href="https://midwesthub.afresearchlab.com/partnerships/" target="_blank" style="color: var(--accent-color); text-decoration: none;">AFRL Regional Network – Midwest Hub</a>, connecting our research and development capabilities with leading academic institutions, industry partners, and government agencies. This partnership provides access to cutting-edge research networks and enables us to deliver solutions that meet the highest standards for defense and commercial applications.</p>
                 <p style="margin-top: 1rem;">Our partnership with the Air Force Research Laboratory network enhances our ability to develop innovative microfluidic solutions that address real-world challenges in biosensing, diagnostics, and advanced materials integration.</p>
             </div>
             
             <div class="tech-highlight" style="margin-top: 1.5rem;">
                 <h3>Product Development Services</h3>
-                <p>Our team's expertise extends beyond our manufactured products to provide comprehensive product development and engineering services for others. We specialize in developing custom solutions for unique research challenges, working closely with clients to transform concepts into functional devices.</p>
+                <p>Our team's expertise extends beyond our manufactured products to provide comprehensive product development and engineering services for others. We specialize in developing custom solutions for unique research challenges, working closely with clients to transform concepts into functional devices through professional engineering consultation and iterative development processes.</p>
             </div>
         </div>
     </section>
@@ -1268,52 +1178,89 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- Service Information Section -->
+    <section class="service-info" style="padding: 3rem 2rem;">
         <div class="container">
-            <h2>Ready to Advance Your Research?</h2>
-            <p>Contact KHEMI/ON for product quotes, technical specifications, and custom engineering services. Professional microfluidic solutions for your research needs.</p>
-            <button onclick="openConsultationModal()" class="btn-primary">Request Quote & Consultation</button>
+            <h2>KHEMI/ON Service Information</h2>
+            <p class="section-intro">KHEMI/ON provides manufactured microfluidic devices and product development engineering services nationwide to research institutions and biotech companies.</p>
+            
+            <div style="background: var(--bg-light); padding: 2rem; border-radius: 0.5rem; margin-top: 2rem;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; font-family: var(--heading-font); font-weight: 600; letter-spacing: -0.01em;">How KHEMI/ON Works</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); color: var(--text-dark);">✓ Product quotes and specifications</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); color: var(--text-dark);">✓ Custom engineering consultation</li>
+                    </ul>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); color: var(--text-dark);">✓ Manufacturing and delivery</li>
+                        <li style="padding: 0.75rem 0; color: var(--text-dark);">✓ Nationwide business operations</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; margin-top: 1.5rem;">
+                    <h4 style="color: var(--secondary-color); margin-bottom: 1rem; font-family: var(--heading-font); font-weight: 600;">Business Operations</h4>
+                    <p style="color: var(--text-light); margin-bottom: 1rem;"><strong>Product Sales:</strong> KHEMI/ON bioreactors for cell culturing research and electrochemical sensors for biomedical research.</p>
+                    <p style="color: var(--text-light); margin: 0;"><strong>Engineering Services:</strong> Product development and engineering services for others, including custom device design, prototyping, and manufacturing consultation.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>KHEMI/ON</h3>
-                <p>Professional microfluidic device manufacturing and custom engineering services for research institutions and biotech companies nationwide.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Products & Services</h3>
-                <ul>
-                    <li><a href="#products">Microfluidic Bioreactors</a></li>
-                    <li><a href="#products">Conductive Microneedle Patches</a></li>
-                    <li><a href="#custom-design">Custom Design Services</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>Email: info@khemion.com</p>
-                <p>Business Operations: Nationwide</p>
-                <p><button onclick="openConsultationModal()" class="cta-button" style="margin-top: 1rem;">Request Quote</button></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 KhemI/On. All rights reserved. Patent-pending technologies.</p>
-        </div>
-    </footer>
+    <!-- CTA Section -->
+            <div class="products-grid">
+                <div class="product-showcase">
+                    <div class="product-image product-image-1" style="display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <img src="Images/skin bioreactor.png" alt="Skin bioreactor" style="max-width: 48%; max-height: 180px; margin: 1rem; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <img src="Images/microfluidic device.jpg" alt="Microfluidic device" style="max-width: 48%; max-height: 180px; margin: 1rem; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Microfluidic Research Platforms</div>
+                        <h3>Lab-on-Chip, Organ-on-Chip, Bioreactors</h3>
+                        <p>Advanced microfluidic platforms for lab-on-chip, organ-on-chip, and bioreactor research. Customizable for cell culturing, tissue engineering, and integrated biosensing. Nanofiber membranes available for cell substrates, filtration, or immobilization matrices.</p>
+                        <div class="product-specs">
+                            <h4>Specifications</h4>
+                            <ul class="spec-list">
+                                <li>Multi-chamber and organ-on-chip designs</li>
+                                <li>Perfusion flow control</li>
+                                <li>Biocompatible materials</li>
+                                <li>Nanofiber membrane integration (cell substrates, filters, immobilization)</li>
+                                <li>Sensor and microneedle array integration</li>
+                                <li>Sterile packaging</li>
+                                <li>Custom configurations</li>
+                                <li>Research documentation</li>
+                            </ul>
+                        </div>
+                        <button onclick="openConsultationModal()" class="quote-btn">Request Product Quote</button>
+                    </div>
+                </div>
 
-    <!-- Consultation Modal -->
-    <div class="modal-overlay" id="consultationModal" onclick="closeModalOnOverlay(event)">
-        <div class="modal-container">
-            <div class="modal-header">
-                <h2>Request Quote & Consultation</h2>
-                <p>Get professional quotes for KHEMI/ON products and custom engineering services</p>
-                <button class="close-btn" onclick="closeConsultationModal()">×</button>
+                <div class="product-showcase">
+                    <div class="product-image product-image-2" style="display: flex; justify-content: center; align-items: center; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); flex-wrap: wrap;">
+                        <img src="Images/microneedle_macro.jpg" alt="Microneedle patch macro" style="max-width: 45%; max-height: 180px; margin: 1rem; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <img src="Images/mn_patch_render.png" alt="Microneedle patch render" style="max-width: 45%; max-height: 180px; margin: 1rem; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <img src="Images/usb_mn_sensor.jpg" alt="USB microneedle sensor" style="max-width: 45%; max-height: 180px; margin: 1rem; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <img src="Images/isolated MN array.png" alt="Isolated microneedle array" style="max-width: 45%; max-height: 180px; margin: 1rem; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Microneedle Arrays</div>
+                        <h3>Wearable Electrochemical Biosensor Research</h3>
+                        <p>Microneedle array platforms for wearable and implantable electrochemical biosensor research. Customizable for analyte detection in biological fluids and tissues, with options for user functionalization and microfluidic integration.</p>
+                        <div class="product-specs">
+                            <h4>Specifications</h4>
+                            <ul class="spec-list">
+                                <li>Microneedle array with electrochemical sensor capability</li>
+                                <li>Wearable and implantable formats</li>
+                                <li>Analyte detection in fluids and tissues</li>
+                                <li>Microfluidic integration</li>
+                                <li>High sensitivity</li>
+                                <li>Medical-grade and biocompatible materials</li>
+                                <li>Custom functionalization available</li>
+                            </ul>
+                        </div>
+                        <button onclick="openConsultationModal()" class="quote-btn">Request Product Quote</button>
+                    </div>
+                </div>
             </div>
-            <div class="modal-content">
-                <form id="consultationForm" action="#" method="POST">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name <span class="required">*</span></label>
@@ -1342,9 +1289,10 @@
                         <label for="product-interest">Product Interest <span class="required">*</span></label>
                         <select id="product-interest" name="product-interest" required>
                             <option value="">Select product or service</option>
-                            <option value="bioreactors">KHEMI/ON Microfluidic Bioreactors</option>
-                            <option value="microneedle-patches">KHEMI/ON Conductive Microneedle Patches</option>
-                            <option value="custom-design">Custom Design Services</option>
+                            <option value="bioreactors">KHEMI/ON Bioreactors for Cell Culturing</option>
+                            <option value="electrochemical-sensors">KHEMI/ON Electrochemical Sensors</option>
+                            <option value="microneedle-arrays">KHEMI/ON Microneedle Arrays</option>
+                            <option value="custom-design">Custom Engineering Services</option>
                             <option value="product-development">Product Development Services</option>
                             <option value="multiple">Multiple Products/Services</option>
                         </select>
@@ -1460,7 +1408,6 @@
         });
 
         document.getElementById('consultationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
             setTimeout(() => {
                 document.getElementById('consultationForm').style.display = 'none';
                 document.getElementById('successMessage').classList.add('show');
@@ -1483,42 +1430,6 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                }
-            });
-        });
-
-        // Image loading error handling
-        function handleImageError(img) {
-            const placeholder = document.createElement('div');
-            placeholder.style.cssText = `
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-weight: 600;
-                text-align: center;
-                border-radius: 0.5rem;
-            `;
-            placeholder.textContent = 'Image Loading...';
-            
-            // Replace the broken image with placeholder
-            img.parentNode.replaceChild(placeholder, img);
-        }
-
-        // Add error handlers to all images after page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('img[src*="Images/"]');
-            images.forEach(img => {
-                img.addEventListener('error', function() {
-                    handleImageError(this);
-                });
-                
-                // Check if image is already broken
-                if (!img.complete || img.naturalWidth === 0) {
-                    handleImageError(img);
                 }
             });
         });
