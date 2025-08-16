@@ -71,6 +71,7 @@
         .nav-brand img {
             height: 48px;
             width: auto;
+            display: block;
         }
         
         .nav-links {
@@ -160,17 +161,13 @@
             filter: brightness(0) invert(1);
         }
         
-        .company-name {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            font-family: var(--logo-font);
-        }
-        
+        /* Removed .company-name visual duplication (now baked into logo_with_name.svg) */
         .company-tagline {
             font-size: 1rem;
             opacity: 0.9;
+            margin-top: 1rem;
             margin-bottom: 2rem;
+            text-align: center;
         }
         
         .hero-content {
@@ -976,9 +973,8 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="nav-brand">
-                <img src="logo.svg" alt="KhemI/On Logo">
-                KhemI/On
+            <a href="#" class="nav-brand" aria-label="KhemI/On Home">
+                <img src="logo_only.svg" alt="KhemI/On Logo Icon">
             </a>
             <ul class="nav-links">
                 <li><a href="#products">Products</a></li>
@@ -994,11 +990,10 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-branding">
-                <div class="hero-logo">
-                    <img src="logo.svg" alt="KhemI/On Logo">
+                <div class="hero-logo" aria-label="KhemI/On">
+                    <img src="logo_with_name.svg" alt="KhemI/On – Microfluidic Research Solutions">
                 </div>
-                <div class="company-name">KhemI/On</div>
-                <div class="company-tagline">Microfluidic Research Solutions</div>
+                <div class="company-tagline" aria-hidden="true">Microfluidic Research Solutions</div>
                 <button onclick="openConsultationModal()" class="btn-primary">Request Product Quote</button>
             </div>
             
