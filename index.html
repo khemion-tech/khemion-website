@@ -1483,24 +1483,9 @@
             });
         });
 
-        // Image loading error handling
+        // Image loading error handling (simplified to avoid false negatives on slow loads)
         function handleImageError(img) {
-            // Try mapped legacy filename (with spaces) once if current (no space) form fails
-            const tried = img.getAttribute('data-tried-legacy');
-            if (!tried) {
-                const map = {
-                    'microfluidic_device.jpg': 'microfluidic device.jpg',
-                    'microneedle_closeup.jpg': 'microneedle_closeup.jpg',
-                    'isolated_MN_array.png': 'isolated MN array.png'
-                };
-                const parts = img.src.split('/');
-                const file = parts[parts.length - 1];
-                if (map[file]) {
-                    img.setAttribute('data-tried-legacy','1');
-                    img.src = img.src.replace(file, encodeURIComponent(map[file]));
-                    return; // attempt legacy file
-                }
-            }
+            console.warn('Image failed to load:', img.currentSrc || img.src);
             const placeholder = document.createElement('div');
             placeholder.style.cssText = `
                 width: 100%;
@@ -1517,21 +1502,12 @@
                 padding: .5rem;
             `;
             placeholder.textContent = 'Image not available';
-            img.parentNode.replaceChild(placeholder, img);
+            if (img.parentNode) img.parentNode.replaceChild(placeholder, img);
         }
 
-        // Add error handlers to all images after page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('img[src*="Images/"]');
-            images.forEach(img => {
-                img.addEventListener('error', function() {
-                    handleImageError(this);
-                });
-                
-                // Check if image is already broken
-                if (!img.complete || img.naturalWidth === 0) {
-                    handleImageError(img);
-                }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('img[src*="Images/"]').forEach(img => {
+                img.addEventListener('error', () => handleImageError(img));
             });
         });
     </script>
