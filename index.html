@@ -998,7 +998,7 @@
                 <li><a href="#custom-design">Custom Design</a></li>
                 <li><a href="#capabilities">Services</a></li>
                 <li><a href="#technology">Technology</a></li>
-                <li><button onclick="openConsultationModal" class="cta-button">Begin Order &amp; Get Quote</button></li>
+                <li><button onclick="openConsultationModal()" class="cta-button">Order</button></li>
             </ul>
         </nav>
     </header>
@@ -1118,6 +1118,9 @@
         <div class="container">
             <h2>Custom Design Services</h2>
             <p class="section-intro">Product development and engineering services for others. Professional microfluidic device design and manufacturing tailored to your research needs.</p>
+            <div style="text-align:center; margin:1rem 0 2rem;">
+                <button onclick="openConsultationModal()" class="btn-primary" style="padding:.85rem 2rem; font-size:0.95rem;">Start Your Project Consultation</button>
+            </div>
             
             <div class="design-grid">
                 <div class="design-card">
@@ -1344,8 +1347,8 @@
     <div class="modal-overlay" id="consultationModal" onclick="closeModalOnOverlay(event)">
         <div class="modal-container">
             <div class="modal-header">
-                <h2>Request Quote & Consultation</h2>
-                <p>Get professional quotes for KHEMI/ON products and custom engineering services</p>
+                <h2>Submit Your Order Specifications</h2>
+                <p>Detail your specifications here to initiate an order for custom products or to begin an engineering consultation.</p>
                 <button class="close-btn" onclick="closeConsultationModal()">×</button>
             </div>
             <div class="modal-content">
